@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Company</title>
+    <!--main stylesheet-->
+    <link rel="stylesheet" href="register-page.css">
+
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Mohave' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        label{
+            color: #43518d;
+
+            font-family: 'Onest';
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .textfield{
+            font-family: 'Onest';
+            font-size: 20px;
+        }
+
+        input[type=text]{
+            height: 50px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        input[type=text]:focus{
+            border: 2px solid #727eb8;
+        }
+
+        input[type=date]{
+            height: 50px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        input[type=date]:focus{
+            border: 2px solid #727eb8;
+        }
+
+        select{
+            height: 56px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        select:focus{
+            border: 2px solid #727eb8;
+        }
+
+        textarea{
+            height: 50px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-top: 15px;
+            padding-left: 20px;
+        }
+
+        textarea:focus{
+            border: 2px solid #727eb8;
+        }
+
+        ::placeholder{
+            color: #66709D;
+            opacity: 50%;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="register-page">
+        <div class="left-panel">
+            <form action="/action_page.php" method="post" style="width: 100%;">
+                <input type="text" id="cname" name="cname" class="textfield" style="width: 88%;" placeholder="Company Name"><br>
+                <input type="text" id="cemail" name="cemail" class="textfield" style="width: 88%;" placeholder="Company Email"><br>
+
+                <input type="text" id="cadd" name="cadd" class="textfield" style="width: 88%;" placeholder="Company's Postal Address"><br>
+
+                <select id="ctype" name="ctype" class="textfield" style="width: 43%; margin-right: 20px;" required>
+                    <option value="service">Service Business</option>
+                    <option value="retailers">Retailer</option>
+                    <option value="intermediaries">Intermediaries</option>
+                    <option value="producers">Producer</option>
+                </select>
+
+                <input type="text" id="cname" name="cname" class="textfield" style="width: 43%;" placeholder="Barangay"><br>
+
+                <textarea name="cdescription" id="cdescription" class="textfield" cols="60" rows="40" style="width: 88%;" placeholder="Company Description"></textarea><br>
+
+                <input type="text" id="cwebsite" name="cwebsite" class="textfield" style="width: 88%;" placeholder="Company's Website"><br>
+
+                <input type="checkbox" name="terms-and-conditions" id="terms-and-conditions" class="textfield" value="terms-and-conditions"><label for="terms-and-conditions" style="font-size: 18px;"> I agree to the Terms and Conditions.</label>
+            </form>
+            
+        </div>
+        
+        <div class="right-panel">
+            <div class="right-panel-contents">
+                <div class="text">
+                    <div class="text-registeras">
+                        Register as an
+                    </div>
+                    <div class="text-usertype" style="font-size: 95px;">
+                        COMPANY
+                    </div>
+                    <div class="text-or">
+                        or apply as an <a href="">Applicant</a>.
+                    </div>
+                </div>
+                <div class="bottom">
+                    <a href="page.html">
+                        <button class="button">REGISTER</button>
+                    </a>
+                    <div class="jobable">
+                        JOB-<span style="color: #FFC83C;">ABLE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

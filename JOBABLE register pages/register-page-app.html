@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as Applicant</title>
+    <!--main stylesheet-->
+    <link rel="stylesheet" href="register-page.css">
+
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Mohave' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        label{
+            color: #43518d;
+
+            font-family: 'Onest';
+            font-size: 20px;
+            font-weight: 400;
+        }
+        
+        .textfield{
+            font-family: 'Onest';
+            font-size: 20px;
+        }
+
+        input[type=text]{
+            height: 50px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        input[type=text]:focus{
+            border: 2px solid #727eb8;
+        }
+
+        input[type=date]{
+            height: 53px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        input[type=date]:focus{
+            border: 2px solid #727eb8;
+        }
+
+        input[type=file]{
+            display: none;
+        }
+
+        label[for=afile]{
+            height: 50px;
+            text-align: start;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            background-color: white;
+
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding-left: 25px;
+            padding-right: 70.6%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        select{
+            height: 56px;
+            
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        select:focus{
+            border: 2px solid #727eb8;
+        }
+
+        ::placeholder{
+            color: #66709D;
+            opacity: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="register-page">
+        <div class="left-panel">
+            <form action="/action_page.php" method="post" style="width: 100%;">
+                <input type="text" id="aname" name="aname" class="textfield" style="width: 88%;" placeholder="Applicant's Name" required><br>
+                
+                <select id="agender" name="agender" class="textfield" style="width: 27%; margin-right: 20px;" required>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <input type="text" id="aage" name="aage" class="textfield" style="width: 28%; margin-right: 20px;" placeholder="Applicant's Age" required>
+
+                <input type="date" id="abirth" name="abirth" class="textfield" style="width: 27%;" required><br>
+
+                <input type="text" id="aemail" name="aemail" class="textfield" style="width: 88%;" placeholder="Applicant's Email" required><br>
+
+                <input type="text" id="aaddress" name="aaddress" class="textfield" style="width: 88%;" placeholder="Applicant's Postal Address" required><br>
+                
+                <select id="aedu" name="aedu" class="textfield" style="width: 90%;" required>
+                    <option value="elementary">Elementary</option>
+                    <option value="highschool">High School</option>
+                    <option value="vocational">Vocational</option>
+                    <option value="college">College</option>
+                    <option value="masters">Masters Degree</option>
+                    <option value="others">Others</option>
+                </select><br><br><br>
+
+                <label for="afile" class="textfield" style="width: 1000px;">Insert Necessary Files</label>
+                <input type="file" id="afile" name="afile" class="textfield" multiple required><br><br><br>
+                <input type="checkbox" name="terms-and-conditions" id="terms-and-conditions" value="terms-and-conditions"><label for="terms-and-conditions" style="font-size: 18px;"> I agree to the Terms and Conditions.</label>
+            </form>
+        </div>
+
+        <div class="right-panel">
+            <div class="right-panel-contents">
+                <div class="text">
+                    <div class="text-registeras">
+                        Register as an
+                    </div>
+                    <div class="text-usertype" style="font-size: 90px;">
+                        APPLICANT
+                    </div>
+                    <div class="text-or">
+                        or apply as a <a href="">Company</a>.
+                    </div>
+                </div>
+                <div class="bottom">
+                    <a href="page.html">
+                        <button class="button">REGISTER</button>
+                    </a>
+                    <div class="jobable">
+                        JOB-<span style="color: #FFC83C;">ABLE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
