@@ -81,6 +81,12 @@ body{
 .posting-applicant .applicant .applicant-applied .applied{
     margin: 10px;
     font-size: 2em;
+    font-weight: 500;
+}
+
+.posting-applicant .applicant .applicant-applied .applied .applied-position{
+    font-size: 0.8em;
+    font-weight: 400;
 }
 
 .posting-applicant .check-cancel{
