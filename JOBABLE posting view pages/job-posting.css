@@ -7,9 +7,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.job-posting{
+.job-posting, .posting-applicant{
+    margin: 10px;
     height: fit-content;
     width: 85%;
     padding: 20px;
@@ -63,4 +65,30 @@ body{
 
 .post-contents .content{
     font-size: 1.2em;
+    text-align: justify;
+}
+
+.posting-applicant .applicant{
+    display: flex;
+    justify-content: space-between;
+}
+
+.posting-applicant .applicant .applicant-applied{
+    display: flex;
+    align-items: center;
+}
+
+.posting-applicant .applicant .applicant-applied .applied{
+    margin: 10px;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.posting-applicant .applicant .applicant-applied .applied .applied-position{
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.posting-applicant .check-cancel{
+
 }
