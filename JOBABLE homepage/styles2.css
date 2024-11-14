@@ -1,0 +1,145 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+.logo-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.logo span {
+    color: #f1c40f;
+}
+.nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+.icons {
+    display: flex;
+    gap: 15px;
+}
+.notification-icon, .profile-icon {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+.upload-button, .announcement-button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+.upload-button:hover, .announcement-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Job Listings */
+.job-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px 20px;
+    background-color: #e0e6f7;
+}
+.job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.company-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.company-logo {
+    width: 35px;
+    height: 35px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+}
+.company-details {
+    display: flex;
+    flex-direction: column;
+}
+.company-name {
+    font-size: 14px;
+    color: #333;
+}
+.time-posted {
+    font-size: 12px;
+    color: #888;
+}
+.edit-option {
+    color: #888;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Job Details */
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.job-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+.job-categories {
+    display: flex;
+    gap: 10px;
+}
+.job-category {
+    background-color: #6574f7;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
