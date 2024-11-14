@@ -18,21 +18,29 @@ body{
     height: 600px;
     padding: 20px;
     border-radius: 20px 0 0 20px;
-    text-align: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
 }
 
 .left-panel h1 {
-    font-size: 110px;
-    margin-bottom: 20px;
+    font-family: 'Montserrat';
+    font-size: 4.5em;
+    font-weight: 800;
+    margin: 20px;
 }
 
 .left-panel .highlight {
     color: #f6c24e;
-    font-weight: bold;
 }
 
 .left-panel p {
-    font-size: 30px;
+    font-size: 1.7em;
+    font-weight: 100;
+    font-family: 'Mohave';
+    margin: 20px;
 }
 
 .left-panel a {
@@ -51,6 +59,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 0 20px 20px 0;
+    gap: 40px;
 }
 
 .role-option{
@@ -58,7 +67,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 .role-option .icon {
@@ -69,10 +78,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
 }
 
 .role-option p {
+    font-family: 'Montserrat';
     font-size: 30px;
-    color: #3d68f5;
+    color: #84889A;
+    margin: 15px 0 0 0;
 }
