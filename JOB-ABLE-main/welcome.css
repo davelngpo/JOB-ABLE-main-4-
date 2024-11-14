@@ -15,50 +15,63 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 1000px;
-    height: 600px;
+    padding: 100px;
+
     background-color: #3d68f5;
     color: white;
     text-align: center;
+
     border-radius: 20px;
 }
 
-.welcome-screen h1 {
-    font-size: 70px;
+.welcome-screen .text{
+    margin: 30px 0 60px 0;
 }
 
-.welcome-screen .highlight {
+
+.welcome-screen .text h1 {
+    font-family: 'Montserrat';
+    font-weight: 800;
+    font-size: 4em;
+
+    margin: 0;
+}
+
+.welcome-screen .text .highlight {
     color: #f6c24e;
-    font-weight: bold;
 }
 
-.welcome-screen p {
-    font-size: 30px;
-    margin-bottom: 20px;
+.welcome-screen .text p {
+    font-family: 'Mohave';
+    font-weight: lighter;
+    font-size: 1.5em;
 }
 
 .button-container {
     display: flex;
-    gap: 20px;
+    gap: 100px;
 }
 
 button {
-    padding: 15px 50px;
-    font-size: 1.2rem;
+    padding: 20px 60px;
+    font-size: 1.5em;
+
     border: none;
-    border-radius: 25px;
-    font-size: 1.2rem;
+    border-radius: 50px;
     cursor: pointer;
+
+    box-shadow: 0 3px 4px #0000003f;
 }
 
-.signin-btn {
+.btn {
     background-color: white;
     color: #f6c24e;
     font-weight: bold;
+    transition: 0.9s;
 }
 
-.register-btn {
-    background-color: white;
-    color: #f6c24e;
+.btn:hover {
+    background-color: #f6c24e;
+    color: white;
     font-weight: bold;
 }
