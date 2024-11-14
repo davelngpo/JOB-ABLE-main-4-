@@ -1,0 +1,134 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+.logo span {
+    color: #f1c40f;
+}
+.nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Search section */
+.search-section {
+    background-color: #6574f7;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+.search-bar .search-icon {
+    color: #333;
+    font-size: 18px;
+}
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+.category {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.category-icon {
+    background-color: #f1c40f;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+}
+
+/* Recommendations */
+.recommendations {
+    background-color: #e0e6f7;
+    padding: 20px;
+}
+.recommendations h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.job-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.company-icon {
+    background-color: #d8d8d8;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.job-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+.job-categories {
+    display: flex;
+    gap: 10px;
+}
+.job-category {
+    background-color: #6574f7;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}

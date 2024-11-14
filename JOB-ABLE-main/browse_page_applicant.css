@@ -1,0 +1,133 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+.logo-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #f1c40f;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.logo span {
+    color: #f1c40f;
+}
+.nav {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 200px;
+    margin-right: 20px;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+.search-bar .search-icon {
+    color: #333;
+    font-size: 18px;
+}
+.category-list {
+    list-style: none;
+    padding: 10px 0;
+}
+.category-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Recommendations */
+.recommendations {
+    background-color: #e0e6f7;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+.recommendations h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.job-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.company-name {
+    font-size: 14px;
+    color: #a9a9a9;
+}
+.job-description {
+    color: #666;
+    margin-bottom: 10px;
+}
+.job-categories {
+    display: flex;
+    gap: 10px;
+}
+.job-category {
+    background-color: #6574f7;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
