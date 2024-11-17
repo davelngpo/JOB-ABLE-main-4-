@@ -11,6 +11,10 @@
     display: flex;
     align-items: center;
     padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: relative; 
+    z-index: 1000;
 }
 .logo {
     display: flex;
@@ -41,16 +45,23 @@
 }
 
 /* Main Content */
+
 .main-content {
     display: flex;
     padding: 20px;
 }
 
 /* Sidebar */
+
+aside{
+    box-shadow: 0 4px 6px rgba(0, 0.3, 0, 0);
+}
+
 .sidebar {
     width: 200px;
     margin-right: 20px;
 }
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -89,17 +100,18 @@
 }
 .recommendations h2 {
     color: #333;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 15px;
 }
 .job-card {
     background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 15px;
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .job-header {
     display: flex;
@@ -108,7 +120,7 @@
     margin-bottom: 10px;
 }
 .job-title {
-    font-size: 18px;
+    font-size: 35px;
     font-weight: bold;
     color: #333;
 }
