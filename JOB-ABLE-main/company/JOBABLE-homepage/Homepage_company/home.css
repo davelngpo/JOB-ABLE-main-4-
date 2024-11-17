@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+ 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+.logo span {
+    color: #f1c40f;
+}
+.nav {
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.action-buttons-container {
+    background-color: #f5f8fc; 
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px; 
+    width: 90%;
+    margin: 20px auto; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.action-buttons {
+    display: flex;
+    gap: 0;
+    width: 100%;  
+    justify-content: center;
+}
+
+.action-buttons button {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #e0e6f7;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;  
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons button.active {
+    background-color: white;
+    color: #3d68f5;
+    border: 2px solid #3d68f5;
+    border-bottom: none;
+    font-weight: bold;
+}
+
+.action-buttons button:hover {
+    background-color: #f4f8ff;
+}
+
+ 
+.job-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px auto;
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.job-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.job-header .left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.company-icon {
+    background-color: #d8d8d8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.job-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+.job-time {
+    color: #666;
+    font-size: 14px;
+}
+.edit-button {
+    background-color: transparent;
+    border: none;
+    color: #3d68f5;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+.edit-button:hover {
+    text-decoration: underline;
+}
+.job-description {
+    color: #666;
+    margin: 10px 0;
+}
+.job-categories {
+    display: flex;
+    gap: 10px;
+}
+.job-category {
+    background-color: #6574f7;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
