@@ -52,35 +52,33 @@ body{
     border-radius: 0 20px 20px 0;
 }
 
-.logo-icon{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.logo .logo-icon{
+.logo{
     width: 150px;
     height: 150px;
     background-color: #3d68f5;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.forms{
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
 }
 
-.forms .forms{
-    font-size: 20px;
+.forms{
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+input{
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .button-container {
@@ -98,7 +96,14 @@ button {
 }
 
 .signin-button {
-    background-color: white;
+    padding: 15px 50px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #3d68f5;
     color: #f6c24e;
     font-weight: bold;
+    
 }
