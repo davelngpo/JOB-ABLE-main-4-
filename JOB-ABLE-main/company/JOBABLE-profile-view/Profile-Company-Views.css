@@ -133,6 +133,7 @@ section.company-section {
     justify-content: space-between;
     align-items: flex-start;
     position: relative; /* Allows absolute positioning of buttons */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .button-container {
@@ -165,6 +166,7 @@ section.company-section {
     border-radius: 15px;
     width: 100%;
     margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }   
 .job-listing h2 {
     font-size: 30px;
@@ -208,6 +210,10 @@ section.company-section {
     padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+.sidebar{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .contact-info h4, .personal-documents h4 {
@@ -263,6 +269,7 @@ section.company-section {
     cursor: pointer;
     font-size: 20px;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .upload-job-btn:hover,
