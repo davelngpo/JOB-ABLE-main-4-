@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="new-announcement.css">
+    <title>New Job Announcement</title>
+</head>
+<body>
+    <div class="popup" id="popup-4">
+        <div class="overlay"></div>
+        <div class="content">
+            <button class="cancel-btn" onclick="togglePopup()">X</button>
+            <div class="header">
+                <h1 class="company-name">Making A New Job Posting</h1>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <textarea placeholder="Job Title"></textarea>
+                </div>
+                <div class="box">
+                    <textarea placeholder="Provide the job’s description..."></textarea>
+                </div>               
+                <div class="box">
+                    <textarea placeholder="Provide the job’s requirements..."></textarea>
+                </div>
+                <div class="box">
+                    <textarea placeholder="Provide the job’s responsibilities..."></textarea>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn add-btn" onclick="togglePopup()">+Add Job Category</button>
+                <button class="btn upload-btn" onclick="togglePopup()">Upload Job Posting</button>
+            </div>
+        </div>
+    </div>
+    
+    <button onclick="togglePopup()">Show Popup</button>
+    
+    <script src="new-announcement.js"></script>
+</body>
+</html>
