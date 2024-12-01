@@ -36,6 +36,9 @@ body{
 .text{
     margin-top: 50%;
     margin-bottom: 30%;
+    
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .text-registeras{
@@ -46,6 +49,7 @@ body{
     font-weight: 700;
 
     margin-bottom: -10px;
+
 }
 
 .text-usertype{

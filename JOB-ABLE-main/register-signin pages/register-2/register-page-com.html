@@ -20,21 +20,20 @@
             font-size: 20px;
             font-weight: 400;
         }
-
+        
         .textfield{
             font-family: 'Onest';
             font-size: 20px;
         }
 
-        input[type=text]{
+        input[type=text], input[type=date], input[type=number], select, textarea{
             height: 50px;
             
             border: 2px solid #A6ACC8;
             border-radius: 10px;
             outline: none;
 
-            margin-top: 10px;
-            margin-bottom: 20px;
+            margin: 10px 0;
             padding-left: 20px;
         }
 
@@ -42,49 +41,20 @@
             border: 2px solid #727eb8;
         }
 
-        input[type=date]{
-            height: 50px;
-            
-            border: 2px solid #A6ACC8;
-            border-radius: 10px;
-            outline: none;
-
-            margin-top: 10px;
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-
         input[type=date]:focus{
             border: 2px solid #727eb8;
         }
 
-        select{
-            height: 56px;
-            
-            border: 2px solid #A6ACC8;
-            border-radius: 10px;
-            outline: none;
-
-            margin-top: 10px;
-            margin-bottom: 20px;
-            padding-left: 20px;
+        input[type=number]:focus{
+            border: 2px solid #727eb8;
         }
-
+        
         select:focus{
             border: 2px solid #727eb8;
         }
 
         textarea{
-            height: 50px;
-            
-            border: 2px solid #A6ACC8;
-            border-radius: 10px;
-            outline: none;
-
-            margin-top: 10px;
-            margin-bottom: 20px;
-            padding-top: 15px;
-            padding-left: 20px;
+            padding: 15px 20px;
         }
 
         textarea:focus{
@@ -101,27 +71,72 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="/action_page.php" method="post" style="width: 100%;">
-                <input type="text" id="cname" name="cname" class="textfield" style="width: 88%;" placeholder="Company Name"><br>
-                <input type="text" id="cemail" name="cemail" class="textfield" style="width: 88%;" placeholder="Company Email"><br>
+            <form action="/action_page.php" method="post" style="width: 87%">
+                <input type="text" id="name" name="name" class="textfield" style="width: 100%; margin-top: 0;" placeholder="Company Name"><br>
+                <input type="text" id="email" name="email" class="textfield" style="width: 100%;" placeholder="Company Email"><br>
 
-                <input type="text" id="cadd" name="cadd" class="textfield" style="width: 88%;" placeholder="Company's Postal Address"><br>
+                <input type="text" id="r_name" name="r_name" class="textfield" style="width: 100%;" placeholder="Company Representative's Name"><br>
+                <input type="text" id="r_email" name="r_email" class="textfield" style="width: 100%;" placeholder="Company Representative's Work Email"><br>
+                
+                <input type="number" id="contactnumber" name="contactnumber" class="textfield" style="width: 100%;" placeholder="Company Contact Number"><br>
+                
+                <input type="text" id="add" name="add" class="textfield" style="width: 100%;" placeholder="Company's Postal Address"><br>
 
-                <select id="ctype" name="ctype" class="textfield" style="width: 43%; margin-right: 20px;" required>
-                    <option value="service">Service Business</option>
-                    <option value="retailers">Retailer</option>
-                    <option value="intermediaries">Intermediaries</option>
-                    <option value="producers">Producer</option>
+                <select id="industry" name="industry" class="textfield" style="width: 45%; margin-right: 20px;" required>
+                    <option value="industry" hidden>Kind of Industry</option>
+                    <option value="agri">Agriculture</option>
+                    <option value="mine">Mining</option>
+                    <option value="quarry">Quarrying</option>
+                    <option value="manufacture">Manufacturing</option>
+                    <option value="construction">Construction</option>
+                    <option value="services">Services</option>
+                    <option value="retail">Retail</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="transport">Transportation</option>
+                    <option value="logistics">Logistics</option>
+                    <option value="logistics">Automotive</option>
+                    <option value="finance-insurance">Finance and Insurance</option>
+                    <option value="health">Healthcare</option>
+                    <option value="education">Education</option>
+                    <option value="hospitality">Hospitality</option>
+                    <option value="technology">Technology</option>
+                    <option value="media-entertainment">Media and Entertainment</option>
+                    <option value="creative">Design/Creative</option>
+                    <option value="professional">Professional Services</option>
+                    <option value="knowledge">Knowledge-based</option>
+                    <option value="specialized">Specialized services</option>
                 </select>
 
-                <input type="text" id="cname" name="cname" class="textfield" style="width: 43%;" placeholder="Barangay"><br>
+                <select id="branch" name="branch" class="textfield" style="width: 45%; margin-right: 20px;" required>
+                    <option value="branch" hidden>Branch</option>
+                    <option value="ArenaBlanco">Arena Blanco</option>
+                    <option value="Ayala">Ayala</option>
+                    <option value="Baliwasan">Baliwasan</option>
+                    <option value="Baluno">Baluno</option>
+                    <option value="Boalan">Boalan</option>
+                    <option value="Bolong">Bolong</option>
+                    <option value="Buenavista">Buenavista</option>
+                    <option value="Bunguiao">Bunguiao</option>
+                    <option value="Busay">Busay</option>
+                    <option value="Cabaluay">Cabaluay</option>
+                    <option value="Cabatangan">Cabatangan</option>
+                    <option value="Cacao">Cacao</option>
+                    <option value="Calabasa">Calabasa</option>
+                    <option value="Calarian">Calarian</option>
+                    <option value="Camino Nuevo">Camino Nuevo</option>
+                    <option value="Campo Islam">Campo Islam</option>
+                    <option value="Canelar">Canelar</option>
+                    <option value="Capisan">Capisan</option>
+                    <option value="Cawit">Cawit</option>
+                    <option value="Culianan">Culianan</option>
+                    <option value="Curuan">Curuan</option>
+                </select>
 
-                <textarea name="cdescription" id="cdescription" class="textfield" cols="60" rows="40" style="width: 88%;" placeholder="Company Description"></textarea><br>
+                <textarea name="description" id="description" class="textfield" cols="60" rows="40" style="width: 100%;" placeholder="Company Description"></textarea><br>
 
-                <input type="text" id="cwebsite" name="cwebsite" class="textfield" style="width: 88%;" placeholder="Company's Website"><br>
+                <input type="text" id="website" name="cwebsite" class="textfield" style="width: 100%;" placeholder="Company Website"><br>
 
-                <input type="checkbox" name="terms-and-conditions" id="terms-and-conditions" class="textfield" value="terms-and-conditions"><label for="terms-and-conditions" style="font-size: 18px;"> I agree to the Terms and Conditions.</label>
-            </form>
+                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp" style="font-size: 18px;"> I agree to the <a href="http://">Terms and Conditions</a> and the <a href="http://">Privacy Policy</a>.</label>            </form>
             
         </div>
         
