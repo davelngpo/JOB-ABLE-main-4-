@@ -1,0 +1,152 @@
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #cddee1;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    width: 560px;
+    z-index: 2;
+    text-align: left;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.popup .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup .applicant-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #131c29;
+}
+
+.popup .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.popup .accept-btn {
+    display: flex;
+    align-items: center;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup .accept-btn .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.popup .close-btn {
+    background: #f23f3f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup .message-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transition: all 300ms ease-in-out;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; 
+    height: 50px; 
+    font-size: 16px; 
+    font-weight: bold;
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.close-btn {
+    background-color: #f23f3f; 
+}
+
+.close-btn:hover {
+    background-color: #e12d2d; 
+    transform: scale(1.1); 
+}
+
+
+.accept-btn {
+    background-color: #4caf50; 
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    width: 30px; 
+    height: 30px; 
+    text-align: center;
+    border-radius: 50%; 
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.accept-btn:hover {
+    background-color: #45a049; 
+    transform: scale(1.1); 
+}
+
+
+.actions {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end; 
+    margin-top: 10px;
+}

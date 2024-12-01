@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="apply-job.css">
+    <title>Apply Job Pop up</title>
+</head>
+<body>
+    <div class="popup" id="popup-2">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="header">
+                <h1 class="applicant-name">You're applying for.. JOB POSTING 1# company name</h1>
+            </div>
+            <div class="message-container">
+                <p>Provide a brief description why you want to apply.</p>
+            </div>
+            <div class="actions">
+                <button class="btn cancel-btn" onclick="togglePopup()">Cancel</button>
+                <button class="btn apply-btn" onclick="togglePopup()">Apply</button>
+            </div>
+        </div>
+    </div>
+    
+    <button onclick="togglePopup()">Show Popup</button>
+    
+    <script src="apply-job.js"></script>
+</body>
+</html>

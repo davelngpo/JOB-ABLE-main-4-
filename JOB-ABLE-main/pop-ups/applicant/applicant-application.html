@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="applicant-application.css">
+    <title>Applicant Pop up</title>
+</head>
+<body>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="header">
+                <h1 class="applicant-name">Applicant Name</h1>
+                <div class="actions">
+                    <button class="btn close-btn" onclick="togglePopup()">X</button>
+                    <button class="btn accept-btn" onclick="togglePopup()">✔</button>
+                </div>
+            </div>
+            <div class="message-container">
+                <p>I want to apply for this job because I want to be able to join an aspiring company,
+                    ready to work in order to gain more experience and connect with my peers.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <button onclick="togglePopup()">Show Popup</button>
+    
+    <script src="applicant-application.js"></script>
+</body>
+</html>
