@@ -1,7 +1,8 @@
 header{
-    width: 98%;
+    width: 100%;
     height: fit-content;
     position: fixed;
+    top: 0;
     
     display: flex;
     justify-content: space-between;
