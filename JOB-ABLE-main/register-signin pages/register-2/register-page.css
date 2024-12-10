@@ -21,6 +21,13 @@ body{
 
 }
 
+h2{
+    color: #09164E;
+    font-family: 'Montserrat';
+    font-size: 2em;
+    margin: 10px 0 10px 0;
+}
+
 .right-panel{
     position: fixed;
     top: 0;

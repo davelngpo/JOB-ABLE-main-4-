@@ -30,7 +30,7 @@
             width: 90%;
         }
 
-        input[type=text], input[type=date], input[type=number], select{
+        input[type=text], input[type=date], input[type=password], input[type=email], select{
             height: 50px;
             width: 98%;
             
@@ -43,6 +43,10 @@
             margin: 10px 0;
             padding-left: 20px;
             
+        }
+        
+        input[type=checkbox]{
+            margin: 10px 0;
         }
 
         textarea{
@@ -95,16 +99,15 @@
     <div class="register-page">
         <div class="left-panel">
             <form action="register.php" method="post" >
-                <input type="text" id="name" name="name" class="textfield" placeholder="Company Name">
-                <input type="text" id="email" name="email" class="textfield" placeholder="Company Email" >
-
-                <input type="text" id="r_name" name="r_name" class="textfield" placeholder="Company Representative's Name">
-                <input type="text" id="r_email" name="r_email" class="textfield" placeholder="Company Representative's Work Email">
-                <input type="text" id="r_number" name="r_number" class="textfield" placeholder="Company Representative's Work Number">
+                <h2 style="margin-top: 0;">Company Information</h2>
+                <input type="text" id="name" name="name" class="textfield" placeholder="Company Name" required>
+                <input type="email" id="email" name="email" class="textfield" placeholder="Company Email" required>
+                <input type="password" id="password" name="password" class="textfield" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" class="textfield" placeholder="Confirm Password" required>
                 
-                <input type="text" id="contactnumber" name="contactnumber" class="textfield" placeholder="Company Contact Number">
+                <input type="text" id="contactnumber" name="contactnumber" class="textfield" placeholder="Company Contact Number" required>
                 
-                <input type="text" id="add" name="add" class="textfield"placeholder="Company's Postal Address">
+                <input type="text" id="add" name="add" class="textfield"placeholder="Company's Postal Address" required>
 
                 <select id="industry" name="industry" class="textfield" required>
                     <option value="industry" hidden>Kind of Industry</option>
@@ -156,10 +159,18 @@
                     <option value="Curuan">Curuan</option>
                 </select>
 
-                <textarea name="description" id="description" class="textfield" placeholder="Company Description"></textarea><br>
+                <textarea name="description" id="description" class="textfield" placeholder="Company Description" required></textarea>
 
-                <input type="text" id="website" name="website" class="textfield" placeholder="Company Website (optional)">
+                <input type="text" id="website" name="website" class="textfield" placeholder="Company Website (optional)" required>
+
+                <h2>Representative Information</h2>
+                <input type="text" id="r_name" name="r_name" class="textfield" placeholder="Company Representative's Name" required>
+                <input type="email" id="r_email" name="r_email" class="textfield" placeholder="Company Representative's Work Email" required>
+                <input type="text" id="r_number" name="r_number" class="textfield" placeholder="Company Representative's Work Number" required>
+
                 <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+
+                
 
                 <div class="btn">
                     <a href="../../JobAbleMain.html">

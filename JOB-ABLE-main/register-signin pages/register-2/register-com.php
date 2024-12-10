@@ -16,9 +16,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $website = $_POST['website'];
     $tcpp = $_POST['tcpp'];
 
+    $confirm_password = $_POST['confirm_password'];
+
     $sql = "INSERT INTO
-    companies   (company_name, company_email, representative_name, representative_email, representative_contact_number, company_contact_number, postal_address, industry_type, branch,    company_description, company_website, agreed_terms_and_conditions, created_at, updated_at)
-    VALUES      ('$name',      '$email',      '$r_name',           '$r_email',           $r_number,                     $contactnumber,         '$address',     '$industry',   '$branch', '$description',      '$website',      '$tcpp',                     CURDATE(),  )";
+    companies   (company_name, company_email, password,  representative_name, representative_email, representative_contact_number, company_contact_number, postal_address, industry_type, branch,    company_description, company_website, agreed_terms_and_conditions, created_at, updated_at)
+    VALUES      ('$name',      '$email',      $password, '$r_name',           '$r_email',           $r_number,                     $contactnumber,         '$address',     '$industry',   '$branch', '$description',      '$website',      '$tcpp',                     CURDATE(),  )";
 
 
 

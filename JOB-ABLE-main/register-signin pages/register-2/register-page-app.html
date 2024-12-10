@@ -30,7 +30,7 @@
             width: 90%;
         }
 
-        input[type=text], input[type=date], input[type=number], select{
+        input[type=text], input[type=date], input[type=password], input[type=email], select{
             height: 50px;
             width: 98%;
             
@@ -43,6 +43,10 @@
             margin: 10px 0;
             padding: 0 20px;
             
+        }
+
+        input[type=checkbox]{
+            margin: 10px 0;
         }
 
         input[type=text]:focus{
@@ -90,11 +94,15 @@
     <div class="register-page">
         <div class="left-panel">
             <form action="register.php" method="post">
-                <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required><br>
-                <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name"><br>
-                <input type="text" id="lastname" name="lastname" class="textfield" placeholder="Last Name" required><br>
-                
-                <select id="agender" name="agender" class="textfield" required>
+                <h2 style="margin-top: 0;">Applicant Information</h2>
+                <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required>
+                <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name">
+                <input type="text" id="lastname" name="lastname" class="textfield" placeholder="Last Name" required>
+                <input type="email" id="email" name="email" class="textfield" placeholder="Email" required>
+                <input type="password" id="password" name="password" class="textfield" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" class="textfield" placeholder="Confirm Password" required>
+
+                <select id="gender" name="gender" class="textfield" required>
                     <option value="Gender" hidden>Gender</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
@@ -105,12 +113,10 @@
 
                 <input type="text" id="birth" name="birth" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Birth Date" class="textfield" required>
 
-                <input type="number" id="contactnumber" name="contactnumber" class="textfield" placeholder="Contact Number" required>
-
-                <input type="text" id="email" name="email" class="textfield" placeholder="Email" required>
+                <input type="text" id="contactnumber" name="contactnumber" class="textfield" placeholder="Contact Number" required>
 
                 <input type="text" id="address" name="address" class="textfield" placeholder="Postal Address" required>
-                
+            
 
                 <select id="edu" name="edu" class="textfield" required>
                     <option value="highest educational attainment" hidden>Highest Educational Attainment</option>
