@@ -25,13 +25,36 @@
             font-family: 'Onest';
             font-size: 20px;
         }
+        
+        form{
+            width: 90%;
+        }
 
-        input[type=text], input[type=date], input[type=number], select, textarea{
+        input[type=text], input[type=date], input[type=number], select{
             height: 50px;
+            width: 98%;
             
+            display: inline-block;
+            box-sizing: border-box;
             border: 2px solid #A6ACC8;
             border-radius: 10px;
             outline: none;
+
+            margin: 10px 0;
+            padding-left: 20px;
+            
+        }
+
+        textarea{
+            height: 100px;
+            width: 98%;
+            
+            display: inline-block;
+            box-sizing: border-box;
+            border: 2px solid #A6ACC8;
+            border-radius: 10px;
+            outline: none;
+            resize: none;
 
             margin: 10px 0;
             padding-left: 20px;
@@ -71,19 +94,19 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="/action_page.php" method="post" style="width: 87%">
-                <input type="text" id="name" name="name" class="textfield" style="width: 100%; margin-top: 0;" placeholder="Company Name"><br>
-                <input type="text" id="email" name="email" class="textfield" style="width: 100%;" placeholder="Company Email"><br>
+            <form action="/action_page.php" method="post" >
+                <input type="text" id="name" name="name" class="textfield" placeholder="Company Name">
+                <input type="text" id="email" name="email" class="textfield" placeholder="Company Email" >
 
-                <input type="text" id="r_name" name="r_name" class="textfield" style="width: 100%;" placeholder="Company Representative's Name"><br>
-                <input type="text" id="r_email" name="r_email" class="textfield" style="width: 100%;" placeholder="Company Representative's Work Email"><br>
-                <input type="number" id="r_number" name="r_number" class="textfield" style="width: 100%;" placeholder="Company Representative's Work Number"><br>
+                <input type="text" id="r_name" name="r_name" class="textfield" placeholder="Company Representative's Name">
+                <input type="text" id="r_email" name="r_email" class="textfield" placeholder="Company Representative's Work Email">
+                <input type="number" id="r_number" name="r_number" class="textfield" placeholder="Company Representative's Work Number">
                 
-                <input type="number" id="contactnumber" name="contactnumber" class="textfield" style="width: 100%;" placeholder="Company Contact Number"><br>
+                <input type="number" id="contactnumber" name="contactnumber" class="textfield" placeholder="Company Contact Number">
                 
-                <input type="text" id="add" name="add" class="textfield" style="width: 100%;" placeholder="Company's Postal Address"><br>
+                <input type="text" id="add" name="add" class="textfield"placeholder="Company's Postal Address">
 
-                <select id="industry" name="industry" class="textfield" style="width: 45%; margin-right: 20px;" required>
+                <select id="industry" name="industry" class="textfield" required>
                     <option value="industry" hidden>Kind of Industry</option>
                     <option value="agri">Agriculture</option>
                     <option value="mine">Mining</option>
@@ -108,7 +131,7 @@
                     <option value="specialized">Specialized services</option>
                 </select>
 
-                <select id="branch" name="branch" class="textfield" style="width: 45%; margin-right: 20px;" required>
+                <select id="branch" name="branch" class="textfield" required>
                     <option value="branch" hidden>Branch</option>
                     <option value="ArenaBlanco">Arena Blanco</option>
                     <option value="Ayala">Ayala</option>
@@ -133,35 +156,30 @@
                     <option value="Curuan">Curuan</option>
                 </select>
 
-                <textarea name="description" id="description" class="textfield" cols="60" rows="40" style="width: 100%;" placeholder="Company Description"></textarea><br>
+                <textarea name="description" id="description" class="textfield" placeholder="Company Description"></textarea><br>
 
-                <input type="text" id="website" name="cwebsite" class="textfield" style="width: 100%;" placeholder="Company Website"><br>
+                <input type="text" id="website" name="cwebsite" class="textfield" placeholder="Company Website (optional)">
+                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
 
-                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp" style="font-size: 18px;"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>            </form>
-            
-        </div>
+                <a href="../../JobAbleMain.html">
+                    <button class="button" name="submit">REGISTER</button>
+                </a>
+            </form>
         
         <div class="right-panel">
-            <div class="right-panel-contents">
-                <div class="text">
-                    <div class="text-registeras">
-                        Register as an
-                    </div>
-                    <div class="text-usertype" style="font-size: 5.4em;">
-                        COMPANY
-                    </div>
-                    <div class="text-or">
-                        or apply as an <a href="register-page-app.html">Applicant</a>.
-                    </div>
+            <div class="text">
+                <div class="text-registeras">
+                    Register as an
                 </div>
-                <div class="bottom">
-                    <a href="../../JobAbleMain.html">
-                        <button class="button">REGISTER</button>
-                    </a>
-                    <div class="jobable">
-                        JOB-<span style="color: #FFC83C;">ABLE</span>
-                    </div>
+                <div class="text-usertype" style="font-size: 5.4em;">
+                    COMPANY
                 </div>
+                <div class="text-or">
+                    or apply as an <a href="register-page-app.html">Applicant</a>.
+                </div>
+            </div>
+            <div class="jobable">
+                JOB-<span style="color: #FFC83C;">ABLE</span>
             </div>
         </div>
     </div>
