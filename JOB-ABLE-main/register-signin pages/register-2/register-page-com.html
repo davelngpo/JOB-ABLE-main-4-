@@ -98,7 +98,7 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="register.php" method="post" >
+            <form action="register-com.php" method="POST" >
                 <h2 style="margin-top: 0;">Company Information</h2>
                 <input type="text" id="name" name="name" class="textfield" placeholder="Company Name" required>
                 <input type="email" id="email" name="email" class="textfield" placeholder="Company Email" required>
@@ -163,19 +163,15 @@
 
                 <input type="text" id="website" name="website" class="textfield" placeholder="Company Website (optional)" required>
 
-                <h2>Representative Information</h2>
+                <h2 style="margin-top: 20px;">Representative Information</h2>
                 <input type="text" id="r_name" name="r_name" class="textfield" placeholder="Company Representative's Name" required>
                 <input type="email" id="r_email" name="r_email" class="textfield" placeholder="Company Representative's Work Email" required>
                 <input type="text" id="r_number" name="r_number" class="textfield" placeholder="Company Representative's Work Number" required>
 
-                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
-
-                
+                <input type="checkbox" name="tcpp" id="tcpp" value="1" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
 
                 <div class="btn">
-                    <a href="../../JobAbleMain.html">
-                        <button class="button" name="c_submit">REGISTER</button>
-                    </a>
+                    <button class="button" name="c_submit">REGISTER</button>
                 </div>
             </form>
         
