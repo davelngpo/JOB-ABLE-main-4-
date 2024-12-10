@@ -10,32 +10,42 @@ body{
 
 .left-panel{
     display: flex;
+    
+    flex-wrap: wrap;
 
     height: 100%;
-    width: 65%;
+    width: 60%;
 
     padding: 50px;
+
+
+}
+
+h2{
+    color: #09164E;
+    font-family: 'Montserrat';
+    font-size: 2em;
+    margin: 10px 0 10px 0;
 }
 
 .right-panel{
     position: fixed;
+    top: 0;
     right: 0;
     
     background-color: #5271FF;
     height: 100%;
-    width: 35%;
-}
-
-.right-panel-contents{
+    width: 40%;
+    
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .text{
-    margin-top: 50%;
-    margin-bottom: 30%;
+    margin: 40px;
     
     word-wrap: break-word;
     word-break: break-all;
@@ -77,13 +87,15 @@ a:visited{
     text-decoration: none;
 }
 
-.bottom{
+.btn{
     display: flex;
-    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin: 20px 0 0 0;
 }
 
 .button{
-    background-color: white;
+    background-color: #5271FF;
     color: #FFC83C;
 
     border: none;
@@ -91,8 +103,9 @@ a:visited{
     padding: 15px 50px;
 
     font-family: 'Onest';
-    font-size: 30px;
+    font-size: 2em;
     font-weight: 700;
+    
 }
 
 .button:hover{
@@ -102,10 +115,13 @@ a:visited{
 .jobable{
     display: flex;
     justify-content: center;
+    align-items: center;
 
     color: #F2F3F8;
-
-    margin-top: 65%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 
     font-family: 'Mohave';
     font-size: 35px;

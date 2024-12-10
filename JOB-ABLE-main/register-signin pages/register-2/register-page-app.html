@@ -26,15 +26,27 @@
             font-size: 20px;
         }
 
-        input[type=text], input[type=date], input[type=number], select{
+        form{
+            width: 90%;
+        }
+
+        input[type=text], input[type=date], input[type=password], input[type=email], select{
             height: 50px;
+            width: 98%;
             
+            display: inline-block;
+            box-sizing: border-box;
             border: 2px solid #A6ACC8;
             border-radius: 10px;
             outline: none;
 
             margin: 10px 0;
-            padding-left: 20px;
+            padding: 0 20px;
+            
+        }
+
+        input[type=checkbox]{
+            margin: 10px 0;
         }
 
         input[type=text]:focus{
@@ -60,13 +72,12 @@
 
         label[for=cv]{
             height: 50px;
-            text-align: start;
             
             border: 2px solid #A6ACC8;
             border-radius: 10px;
             background-color: white;
 
-            margin: 10px 0;
+            margin: 20px 0;
             padding: 15px 20px;
         }
 
@@ -82,30 +93,32 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="/action_page.php" method="post" style="width: 87%;">
-                <input type="text" id="firstname" name="firstname" class="textfield" style="width: 100%;" placeholder="First Name" required><br>
-                <input type="text" id="middlename" name="middlename" class="textfield" style="width: 100%;" placeholder="Middle Name"><br>
-                <input type="text" id="lastname" name="lastname" class="textfield" style="width: 100%;" placeholder="Last Name" required><br>
-                
-                <select id="agender" name="agender" class="textfield" style="width: 45%; margin-right: 30px;" required>
+            <form action="register.php" method="post">
+                <h2 style="margin-top: 0;">Applicant Information</h2>
+                <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required>
+                <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name">
+                <input type="text" id="lastname" name="lastname" class="textfield" placeholder="Last Name" required>
+                <input type="email" id="email" name="email" class="textfield" placeholder="Email" required>
+                <input type="password" id="password" name="password" class="textfield" placeholder="Password" required>
+                <input type="password" id="confirm_password" name="confirm_password" class="textfield" placeholder="Confirm Password" required>
+
+                <select id="gender" name="gender" class="textfield" required>
                     <option value="Gender" hidden>Gender</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="others">Others</option>
                 </select>
 
-                <input type="text" id="age" name="age" class="textfield" style="width: 45%;" placeholder="Age" required><br>
+                <input type="text" id="age" name="age" class="textfield" placeholder="Age" required>
 
-                <input type="text" id="birth" name="birth" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Birth Date" class="textfield" style="width: 40%; padding-right: 20px ; margin-right: 30px;" required>
+                <input type="text" id="birth" name="birth" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Birth Date" class="textfield" required>
 
-                <input type="number" id="contactnumber" name="contactnumber" class="textfield" style="width: 45%;" placeholder="Contact Number" required><br>
+                <input type="text" id="contactnumber" name="contactnumber" class="textfield" placeholder="Contact Number" required>
 
-                <input type="text" id="email" name="email" class="textfield" style="width: 100%;" placeholder="Email" required><br>
+                <input type="text" id="address" name="address" class="textfield" placeholder="Postal Address" required>
+            
 
-                <input type="text" id="address" name="address" class="textfield" style="width: 100%;" placeholder="Postal Address" required><br>
-                
-
-                <select id="edu" name="edu" class="textfield" style="width: 103%;" required>
+                <select id="edu" name="edu" class="textfield" required>
                     <option value="highest educational attainment" hidden>Highest Educational Attainment</option>
                     <option value="highschool">High School</option>
                     <option value="vocational">Vocational</option>
@@ -114,39 +127,40 @@
                     <option value="others">Others</option>
                 </select>
                 
-                <input type="text" id="highschool" name="highschool" class="textfield" style="width: 100%;" placeholder="High School Name" required><br>
+                <input type="text" id="highschool" name="highschool" class="textfield" placeholder="High School Name" required>
 
-                <input type="text" id="college" name="college" class="textfield" style="width: 100%;" placeholder="College Name" required><br>
+                <input type="text" id="college" name="college" class="textfield" placeholder="College Name" required>
                 <br><br>
 
-                <label for="cv" class="textfield" >Please upload your Resume/CV</label>
-                <input type="file" id="cv" name="cv" class="textfield" multiple required><br><br><br>
+                <label for="cv" class="textfield" >Please upload your Resume/CV</label><br><br><br>
+                <input type="file" id="cv" name="cv" class="textfield" multiple required>
 
-                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp" style="font-size: 18px;"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+               
+                <div class="btn">
+                    <a href="../../JobAbleMain.html">
+                        <button class="button" name="a_submit">REGISTER</button>
+                    </a>
+                </div>
+                
+            
             </form>
         </div>
 
         <div class="right-panel">
-            <div class="right-panel-contents">
-                <div class="text">
-                    <div class="text-registeras">
-                        Register as an
-                    </div>
-                    <div class="text-usertype">
-                        APPLICANT
-                    </div>
-                    <div class="text-or">
-                        or apply as a <a href="register-page-com.html">Company</a>.
-                    </div>
+            <div class="text">
+                <div class="text-registeras">
+                    Register as an
                 </div>
-                <div class="bottom">
-                    <a href="../../JobAbleMain.html">
-                        <button class="button">REGISTER</button>
-                    </a>
-                    <div class="jobable">
-                        JOB-<span style="color: #FFC83C;">ABLE</span>
-                    </div>
+                <div class="text-usertype">
+                    APPLICANT
                 </div>
+                <div class="text-or">
+                    or apply as a <a href="register-page-com.html">Company</a>.
+                </div>
+            </div>
+            <div class="jobable">
+                JOB-<span style="color: #FFC83C;">ABLE</span>
             </div>
         </div>
     </div>
