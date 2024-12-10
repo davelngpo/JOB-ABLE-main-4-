@@ -89,7 +89,7 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="/action_page.php" method="post">
+            <form action="register.php" method="post">
                 <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required><br>
                 <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name"><br>
                 <input type="text" id="lastname" name="lastname" class="textfield" placeholder="Last Name" required><br>
@@ -129,11 +129,11 @@
                 <label for="cv" class="textfield" >Please upload your Resume/CV</label>
                 <input type="file" id="cv" name="cv" class="textfield" multiple required><br><br><br>
 
-                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
                
                 <div class="btn">
                     <a href="../../JobAbleMain.html">
-                        <button class="button" name="submit">REGISTER</button>
+                        <button class="button" name="a_submit">REGISTER</button>
                     </a>
                 </div>
                 

@@ -94,7 +94,7 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="/action_page.php" method="post" >
+            <form action="register.php" method="post" >
                 <input type="text" id="name" name="name" class="textfield" placeholder="Company Name">
                 <input type="text" id="email" name="email" class="textfield" placeholder="Company Email" >
 
@@ -158,12 +158,12 @@
 
                 <textarea name="description" id="description" class="textfield" placeholder="Company Description"></textarea><br>
 
-                <input type="text" id="website" name="cwebsite" class="textfield" placeholder="Company Website (optional)">
-                <input type="checkbox" name="tcpp" id="tcpp"><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                <input type="text" id="website" name="website" class="textfield" placeholder="Company Website (optional)">
+                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
 
                 <div class="btn">
                     <a href="../../JobAbleMain.html">
-                        <button class="button" name="submit">REGISTER</button>
+                        <button class="button" name="c_submit">REGISTER</button>
                     </a>
                 </div>
             </form>
