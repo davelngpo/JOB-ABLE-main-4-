@@ -1,11 +1,11 @@
 <?php
 
-    $localhost = "localhost";
-    $username = "root";
-    $password = "";
+    $dblocalhost = "localhost";
+    $dbusername = "root";
+    $dbpassword = "";
     $database = "jobable";
 
-    $conn = new mysqli($localhost, $username, $password, $database);
+    $conn = new mysqli($dblocalhost, $dbusername, $dbpassword, $database);
 
     if ($connect->connect_error) {
         die("Connection failed: " . $connect->connect_error);
