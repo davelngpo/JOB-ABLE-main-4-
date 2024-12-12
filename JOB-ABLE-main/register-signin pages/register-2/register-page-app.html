@@ -186,7 +186,7 @@
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="register.php" method="post">
+            <form action="register-app.php" method="post">
                 <h2 style="margin-top: 0;">Applicant Information</h2>
                 <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required>
                 <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name">
@@ -213,11 +213,11 @@
 
                 <select id="edu" name="edu" class="textfield" required>
                     <option value="highest educational attainment" hidden>Highest Educational Attainment</option>
-                    <option value="highschool">High School</option>
-                    <option value="vocational">Vocational</option>
-                    <option value="college">College</option>
-                    <option value="masters">Masters Degree</option>
-                    <option value="others">Others</option>
+                    <option value="High School">High School</option>
+                    <option value="Vocational">Vocational</option>
+                    <option value="College">College</option>
+                    <option value="Masters Degree">Masters Degree</option>
+                    <option value="Others">Others</option>
                 </select>
 <!--for skills ito-->
                 <div class="checkbox-dropdown">
@@ -289,18 +289,16 @@
                 
                 <input type="text" id="highschool" name="highschool" class="textfield" placeholder="High School Name" required>
 
-                <input type="text" id="college" name="college" class="textfield" placeholder="College Name" required>
+                <input type="text" id="college" name="college" class="textfield" placeholder="College Name">
                 <br><br>
 
                 <label for="cv" class="textfield" >Please upload your Resume/CV</label><br><br><br>
-                <input type="file" id="cv" name="cv" class="textfield" multiple required>
+                <input type="file" id="cv" name="cv" class="textfield" multiple>
 
-                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                <input type="checkbox" name="tcpp" id="tcpp" value="1" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
                
                 <div class="btn">
-                    <a href="../../JobAbleMain.html">
-                        <button class="button" name="a_submit">REGISTER</button>
-                    </a>
+                    <button class="button" name="a_submit">REGISTER</button>
                 </div>
                 
             

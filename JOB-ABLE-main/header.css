@@ -51,6 +51,8 @@ header{
 .options a{
     text-decoration: none;
     
+    font-family: 'Mohave' !important;
+    font-size: 1em !important; 
     font-weight: 600;
     color: #09164E;
 }
