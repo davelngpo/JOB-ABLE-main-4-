@@ -18,19 +18,17 @@
             <div class="logo"></div>
 
             <div class="forms">
-                <div class="forms">
-                    <form action="index.php" method="post" enctype="multipart/form-data">
+                <form action="sign-in-app.php" method="post">
 
 
-                        <input type="email" id="email" placeholder="enter you email" minlength="8" maxlength="30">
+                    <input type="email" name="email" id="email" placeholder="enter your email" required>
 
-                        <label for="password">  </label> <br>
-                        <input type="password" id="password" placeholder="enter your password" minlength="8" maxlength="15">
+                    <label for="password">  </label> <br>
+                    <input type="password" name="password" id="password" placeholder="enter your password" required>
 
-                        <button type="button" class="signin-button" onclick="window.location.href='../../applicant/JOBABLE-homepage/home_page_applicant.html'">SIGN IN</button>
+                    <button type="submit" class="signin-button">SIGN IN</button>
 
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
