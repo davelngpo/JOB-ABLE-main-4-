@@ -11,7 +11,7 @@
         $password = validate($_POST['password']);
 
         
-        $sql = "SELECT * FROM applicants WHERE email = ?";
+        $sql = "SELECT * FROM companies WHERE company_email = ?";
         $stmt = mysqli_prepare($connect, $sql);
         if (!$stmt) {
             die("SQL error: " . mysqli_error($connect));
@@ -23,26 +23,26 @@
         if ($result && mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 
-            if (password_verify($password, $row['password_hash'])) {
+            if (password_verify($password, $row['password'])) {
                 session_start();
-                $_SESSION['applicant_id'] = $row['applicant_id'];
-                header("location: ../../applicant/JOBABLE-homepage/home_page_applicant.html");
+                $_SESSION['company_id'] = $row['company_id'];
+                header("location: ../../company/JOBABLE-homepage/home.html");
                 exit();
                 
             } else {
-                header("location: Sign-in-Applicant.html"); //incorrect password
+                header("location: sign-in-Company.html"); //incorrect password
                 echo "<script>console.log('PHP incorrect pass')</script>";
                 exit();
             }
 
         } else {
-            header("location: Sign-in-Applicant.html"); //user not found
+            header("location: sign-in-Company.html"); //user not found
             echo "<script>console.log('PHP user not found')</script>";
             exit();
         }
     
     }else{
-        header("location: Sign-in-Applicant.html");
+        header("location: sign-in-Company.html");
     }
 
     

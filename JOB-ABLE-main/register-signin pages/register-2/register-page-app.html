@@ -22,10 +22,7 @@
             border-radius: 10px;
             display: inline-block;
             padding: 10px;
-            border: 1px solid #ccc; 
-            border-radius: 10px;
-            background-color: #f9f9f9;
-            margin-bottom: 10px; 
+            
         }
         
         .textfield{
@@ -78,15 +75,22 @@
         }
 
         label[for=cv]{
-            height: 50px;
+            height: 25px;
             
             border: 2px solid #A6ACC8;
             border-radius: 10px;
             background-color: white;
 
-            margin: 20px 0;
-            padding: 15px 20px;
+            margin: 10px 0;
+            padding: 15px 50px;
         }
+
+        .labels{
+            width: 98%;
+            display: flex;
+            justify-content: space-between;
+        }
+
         ::placeholder{
             color: #66709D;
             opacity: 50%;
@@ -142,14 +146,14 @@
         display: block;
     }
 
-    #skills-dropdown-label{
+    label[for=skills-dropdown]{
         display: inline-block;
-    padding: 10px;
-    border: 1px solid #ccc; 
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    font-size: 14px; 
-    margin-bottom: 10px; 
+        padding:15.5px 90px;
+        border: 2px solid #A6ACC8; 
+        border-radius: 10px;
+        background-color: white;
+        font-size: 1.2em; 
+        margin: 10px 0;
 
     }
 
@@ -219,9 +223,18 @@
                     <option value="Masters Degree">Masters Degree</option>
                     <option value="Others">Others</option>
                 </select>
-<!--for skills ito-->
+
+                <input type="text" id="highschool" name="highschool" class="textfield" placeholder="High School Name" required>
+
+                <input type="text" id="college" name="college" class="textfield" placeholder="College Name">
+                
+                <div class="labels">
+                <label for="cv" class="textfield" >Please upload your Resume/CV</label>
+                <input type="file" id="cv" name="cv" class="textfield" multiple>
+                
+                <!--for skills ito-->
                 <div class="checkbox-dropdown">
-                    <input type="checkbox" id="skills-dropdown">
+                    <input type="checkbox" name="skills-dropdown" id="skills-dropdown">
                     <label for="skills-dropdown">Select Your Skills</label>
                     <div class="dropdown-content">
                         <input type="checkbox" id="skill1" name="skills[]" value="business management skills">
@@ -285,18 +298,11 @@
                         <label for="skill20">Environment & Sustainability Skills</label>
                     </div>
                 </div>
-                
-                
-                <input type="text" id="highschool" name="highschool" class="textfield" placeholder="High School Name" required>
-
-                <input type="text" id="college" name="college" class="textfield" placeholder="College Name">
-                <br><br>
-
-                <label for="cv" class="textfield" >Please upload your Resume/CV</label><br><br><br>
-                <input type="file" id="cv" name="cv" class="textfield" multiple>
+                </div>
 
                 <input type="checkbox" name="tcpp" id="tcpp" value="1" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
                
+
                 <div class="btn">
                     <button class="button" name="a_submit">REGISTER</button>
                 </div>

@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
     $stmt->close();
 
-    $hash_password = password_hash($password, PASSWORD_BCRYPT);
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = mysqli_prepare($connect, "INSERT INTO applicants(first_name, middle_name, last_name, gender, age, birth_date, contact_number, email, postal_address, highest_educational_attainment, high_school_name, college_name, password_hash, tcpp) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
