@@ -19,6 +19,13 @@
             font-family: 'Onest';
             font-size: 20px;
             font-weight: 400;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ccc; 
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            margin-bottom: 10px; 
         }
         
         .textfield{
@@ -80,20 +87,106 @@
             margin: 20px 0;
             padding: 15px 20px;
         }
-
-        
-
         ::placeholder{
             color: #66709D;
             opacity: 50%;
         }
+        .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    <!--for skills ito-->
+    .checkbox-dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
 
+    .checkbox-dropdown input[type="checkbox"] {
+        display: none;
+        padding: 0 20px;
+    }
+    <!--for skills ito-->
+    .checkbox-dropdown label {
+        display: block;
+        background-color: #ffffff;
+        color: #A6ACC8;
+        font-family: 'Onest';
+        font-size: 20px;
+        font-weight: 400;
+        border: 2px solid;
+        border-radius: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        text-align: center;
+        max-width: 845px; 
+        
+    }
+
+    .checkbox-dropdown .dropdown-content {
+        
+        display: none;
+       
+        background-color: white;
+        
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        border: 2px solid #A6ACC8;
+        border-radius: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .checkbox-dropdown input[type="checkbox"]:checked + label + .dropdown-content {
+        display: block;
+    }
+
+    #skills-dropdown-label{
+        display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    font-size: 14px; 
+    margin-bottom: 10px; 
+
+    }
+
+    .checkbox-dropdown .dropdown-content label {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+        font-family: 'Onest';
+        font-size: 18px;
+        color: #A6ACC8;
+        cursor: pointer;
+    }
+
+    .checkbox-dropdown .dropdown-content input[type="checkbox"] {
+        display: none;
+    }
+
+    .checkbox-dropdown .dropdown-content label:before {
+        content: "☐";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        font-size: 18px;
+        color: #43518d;
+    }
+
+    .checkbox-dropdown .dropdown-content input[type="checkbox"]:checked + label:before {
+        content: "☑";
+        color: #43518d;
+    }
     </style>
 </head>
 <body>
     <div class="register-page">
         <div class="left-panel">
-            <form action="register-app.php" method="post">
+            <form action="register.php" method="post">
                 <h2 style="margin-top: 0;">Applicant Information</h2>
                 <input type="text" id="firstname" name="firstname" class="textfield" placeholder="First Name" required>
                 <input type="text" id="middlename" name="middlename" class="textfield" placeholder="Middle Name">
@@ -120,12 +213,79 @@
 
                 <select id="edu" name="edu" class="textfield" required>
                     <option value="highest educational attainment" hidden>Highest Educational Attainment</option>
-                    <option value="High School">High School</option>
-                    <option value="Vocational">Vocational</option>
-                    <option value="College">College</option>
-                    <option value="Masters Degree">Masters Degree</option>
-                    <option value="Others">Others</option>
+                    <option value="highschool">High School</option>
+                    <option value="vocational">Vocational</option>
+                    <option value="college">College</option>
+                    <option value="masters">Masters Degree</option>
+                    <option value="others">Others</option>
                 </select>
+<!--for skills ito-->
+                <div class="checkbox-dropdown">
+                    <input type="checkbox" id="skills-dropdown">
+                    <label for="skills-dropdown">Select Your Skills</label>
+                    <div class="dropdown-content">
+                        <input type="checkbox" id="skill1" name="skills[]" value="business management skills">
+                        <label for="skill1">Business Management Skills</label>
+                
+                        <input type="checkbox" id="skill2" name="skills[]" value="marketing skills">
+                        <label for="skill2">Marketing Skills</label>
+                
+                        <input type="checkbox" id="skill3" name="skills[]" value="creative design skills">
+                        <label for="skill3">Creative Design Skills</label>
+                
+                        <input type="checkbox" id="skill4" name="skills[]" value="communication languages">
+                        <label for="skill4">Communication Languages</label>
+                
+                        <input type="checkbox" id="skill5" name="skills[]" value="sales skills">
+                        <label for="skill5">Sales Skills</label>
+                
+                        <input type="checkbox" id="skill6" name="skills[]" value="customer support skills">
+                        <label for="skill6">Customer Support Skills</label>
+                
+                        <input type="checkbox" id="skill7" name="skills[]" value="leadership teamwork skills">
+                        <label for="skill7">Leadership & Teamwork Skills</label>
+                
+                        <input type="checkbox" id="skill8" name="skills[]" value="financial accounting skills">
+                        <label for="skill8">Financial Accounting Skills</label>
+                
+                        <input type="checkbox" id="skill9" name="skills[]" value="legal skills">
+                        <label for="skill9">Legal Skills</label>
+                
+                        <input type="checkbox" id="skill10" name="skills[]" value="health medical skills">
+                        <label for="skill10">Health & Medical Skills</label>
+                
+                        <input type="checkbox" id="skill11" name="skills[]" value="data analytics skills">
+                        <label for="skill11">Data Analytics Skills</label>
+                
+                        <input type="checkbox" id="skill12" name="skills[]" value="educational training skills">
+                        <label for="skill12">Educational Training Skills</label>
+                
+                        <input type="checkbox" id="skill13" name="skills[]" value="science engineering skills">
+                        <label for="skill13">Science & Engineering Skills</label>
+                
+                        <input type="checkbox" id="skill14" name="skills[]" value="art culture skills">
+                        <label for="skill14">Art & Culture Skills</label>
+                
+                        <input type="checkbox" id="skill15" name="skills[]" value="social services skills">
+                        <label for="skill15">Social Services Skills</label>
+                
+                        <input type="checkbox" id="skill16" name="skills[]" value="technology IT skills">
+                        <label for="skill16">Technology & IT Skills</label>
+                
+                        <input type="checkbox" id="skill17" name="skills[]" value="hospitality tourism skills">
+                        <label for="skill17">Hospitality & Tourism Skills</label>
+                
+                        <input type="checkbox" id="skill18" name="skills[]" value="logistics supply chain skills">
+                        <label for="skill18">Logistics & Supply Chain Skills</label>
+                
+                        <input type="checkbox" id="skill19" name="skills[]" value="personal development skills">
+                        <label for="skill19">Personal Development Skills</label>
+                
+                        <input type="checkbox" id="skill20" name="skills[]" value="environment sustainability skills">
+                        <label for="skill20">Environment & Sustainability Skills</label>
+                    </div>
+                </div>
+                
                 
                 <input type="text" id="highschool" name="highschool" class="textfield" placeholder="High School Name" required>
 
@@ -133,12 +293,14 @@
                 <br><br>
 
                 <label for="cv" class="textfield" >Please upload your Resume/CV</label><br><br><br>
-                <input type="file" id="cv" name="cv" class="textfield" multiple>
+                <input type="file" id="cv" name="cv" class="textfield" multiple required>
 
-                <input type="checkbox" name="tcpp" id="tcpp" value="1" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                <input type="checkbox" name="tcpp" id="tcpp" required><label for="tcpp"> I agree to the <a href="terms-and-conditions.html">Terms and Conditions</a> and the <a href="privacy-policy.html">Privacy Policy</a>.</label>
                
                 <div class="btn">
-                    <button class="button" name="a_submit">REGISTER</button>
+                    <a href="../../JobAbleMain.html">
+                        <button class="button" name="a_submit">REGISTER</button>
+                    </a>
                 </div>
                 
             
@@ -162,5 +324,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>
