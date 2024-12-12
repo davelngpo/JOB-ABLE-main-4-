@@ -1,3 +1,8 @@
+<?php
+    include '../../dbconnect.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,46 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Applicant View</title>
     <link rel="stylesheet" href="Profile-Applicant-View.css">
-    <link rel="stylesheet" href="../../header.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="web-name">
-            <img src="../../assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
-        </div>
-
-        <div class="nav">
-            <div class="options">
-                <a href="../JOBABLE-homepage/home_page_applicant.html">HOME</a>
-                <a href="../browsing-page/browse_page_applicant.html">BROWSE</a>
-                <a href="http://">MORE</a>
-            </div>
-
-            <div class="icons">
-                <img class="notif" src="../../assets/notification icon.png" alt="Notification">
-                <a href="../JOBABLE-profile-view/Profile-Applicant-View.html"><img class="profile" src="../../assets/account icon.png" alt="Account"></a>
-            </div>
-        </div>
-    </header>
+<?php include 'header-app.php' ?>
     
     <br><br><br><br><br><br>
-    <!-- <header>
-        <div class="logo">
-            <span class="circle">🟡</span>JOB-<span>ABLE</span>
-        </div>
-        <nav>
-            <a href="../JOBABLE-homepage/home_page_applicant.html">Home</a>
-            <a href="../../browse_page_applicant.html">Browse</a>
-            <a href="#">More</a>
-            <div class="icons">
-                <span class="bell">🔔</span>
-                <span class="profile">👤</span>
-            </div>
-        </nav>
-    </header> -->
 
     <section class="applicant-section">
         <div class="profile-container">
