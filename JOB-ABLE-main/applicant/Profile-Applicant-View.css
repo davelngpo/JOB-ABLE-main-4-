@@ -53,32 +53,41 @@ section.applicant-section {
 .profile-container {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     width: 250%; /* Ensures the profile and sidebar fill the available width */
 }
 
-.left-column {
-    width: 75%; /* Adjust width to fit most of the space */
+.top-column {
+    display: flex;
+    
+    width: 100%; /* Adjust width to fit most of the space */
+}
+
+.bottom-column {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .sidebar {
-    width: 23%; /* Sidebar is on the right with some spacing */
+    width: 25%; /* Sidebar is on the right with some spacing */
     padding: 40px;
-    background-color: rgb(255, 250, 250);
+    background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 190px;
+    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
     float: right;
 }
 
 .profile-header {
-    background-color: #eaebeb;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 15px;
     margin-bottom: 29px;
     width: 133%; 
     display: flex; 
-    justify-content: space-between; 
     align-items: flex-start;
+    position: relative; 
+    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
 }
 
 .button-container {
@@ -93,7 +102,7 @@ section.applicant-section {
     overflow: hidden;
     border-radius: 5px;
     background-color: #e04b3d;
-    margin-bottom: 20px;
+    margin: 0 10px;
 }
 
 .profile-picture img {
@@ -103,31 +112,32 @@ section.applicant-section {
 }
 
 .applicant-details {
-    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant-details .applicant{
+    position: absolute;
+    bottom: 20px;
 }
 
 
-.applicant-details h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
+.applicant-details .applicant h1 {
+    color: #09164E;
+    font-family: 'Montserrat';
+    font-size: 2em;
+    margin: 0 10px;
 }
 
 .age-gender {
-    font-size: 16px;
-    color: gray;
+    font-size: 0.6em;
+    font-weight: 500;
+    color: rgba(9, 22, 78, 0.47);
 }
 
 .applicant-details p {
     font-size: 14px;
     color: gray;
-    margin-top: 10px;
-}
-
-.profile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative; /* Allows absolute positioning of buttons */
 }
 
 .button-container {
@@ -139,46 +149,68 @@ section.applicant-section {
 }
 .edit-profile-bttn,
 .logout-bttn {
-    background-color: #4261dc;
-    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     margin-top: 10px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 1em;
     
 }
 
 .logout-bttn {
-    background-color: #b8b7b6;
+    background-color: #D8DDF2;
+    color: #09164E;
+}
+
+.edit-profile-bttn{
+    background-color: #4261dc;
+    color: white;
 }
 
 .recently-applied {
-    background-color: rgb(255, 255, 255);
-    padding: 52px;
+    width: 75%;
+    background-color: #ffffff;
+    padding: 30px 40px;
     border-radius: 10px;
+    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
 }
 
-.recently-applied h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+.recently-applied h1 {
+    font-size: 1.8em;
+    font-family: 'Mohave';
+    font-weight: 500;
+    color: #09164E;
+    border-bottom: 2px solid #B3B8CF;
 }
 
 .job-listings {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 30px;
+    margin: 10px 0 30px 0;
 }
 
 .job-posting {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px;
-    background-color: #f9f9f9;
+    background-color: #d7dcf268;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    color: #09164E;
+}
+
+.job-posting p strong{
+    font-size: 2em;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+.job-posting .company-name{
+    font-family: 'Onest';
+    font-size: 1.1em;
 }
 
 .pagination {
