@@ -1,6 +1,5 @@
 <?php
     include '../../dbconnect.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<?php include 'header-app.php' ?>
-    
+    <?php include 'logout-app.php' ?>
+    <?php include 'header-app.php' ?>
+
     <br><br><br><br><br><br>
 
     <section class="applicant-section">
@@ -33,7 +33,7 @@
                         <h1>Applicant Name <span class="age-gender">| Age | Gender</span></h1>
                         <div class="button-container"> <!-- Button container for right alignment -->
                             <button class="edit-profile-bttn">Edit Profile</button>
-                            <a href="../../JobAbleMain.html"><button class="logout-bttn">Logout</button></a>
+                            <a href="logout.php"><button class="logout-bttn">Logout</button></a>
                         </div>
                         <br>
                         <p>Applicant Biography lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet sem velit. Vestibulum purus urna, sagittis id faucibus ac, convallis et nunc.</p>

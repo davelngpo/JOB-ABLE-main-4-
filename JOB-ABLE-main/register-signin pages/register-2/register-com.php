@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 
         if (mysqli_stmt_execute($stmt)) {
-            header("Location: ../Sign-in.html");
+            header("Location: ../Sign-in.php");
         } else {
             echo "<h3>Error: " . $stmt->error . "</h3>";
         }

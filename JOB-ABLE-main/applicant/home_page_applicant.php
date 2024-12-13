@@ -19,8 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- Header -->
+<?php include 'logout-app.php' ?>
 <?php include 'header-app.php' ?>
 
 <br><br><br><br><br>

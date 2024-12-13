@@ -26,7 +26,7 @@
             if (password_verify($password, $row['password_hash'])) {
                 session_start();
                 $_SESSION['applicant_id'] = $row['applicant_id'];
-                header("location: ../../applicant/JOBABLE-homepage/home_page_applicant.html");
+                header("location: ../../applicant/home_page_applicant.php");
                 exit();
                 
             } else {
@@ -36,7 +36,7 @@
             }
 
         } else {
-            header("location: Sign-in-Applicant.html"); //user not found
+            header("location: Sign-in-Applicant.php"); //user not found
             echo "<script>console.log('PHP user not found')</script>";
             exit();
         }

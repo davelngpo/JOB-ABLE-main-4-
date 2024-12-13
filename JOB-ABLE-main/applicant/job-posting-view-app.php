@@ -3,7 +3,13 @@
 
     $id = $_GET['id'];
 
-    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id WHERE jp.jobposting_id = $id GROUP BY jp.jobposting_id ";
+    $jobposting = "SELECT *,
+                GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories
+                FROM jobposting jp
+                join companies c ON jp.company_id = c.company_id
+                join job_categories jc on jc.jobposting_id = jp.jobposting_id
+                WHERE jp.jobposting_id = $id
+                GROUP BY jp.jobposting_id ";
 
 ?>
 
@@ -20,8 +26,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <?php include 'logout-app.php' ?>
     <?php include 'header-app.php' ?>
-
     
     <br><br><br><br><br><br><br>
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- Header -->
+<?php include 'logout-app.php' ?>
 <?php include 'header-app.php' ?>
 
 <br><br><br><br><br>
@@ -29,17 +29,6 @@
         <p>BROWSE BY...</p>
         <ul class="category-list">
             <li><input type="checkbox"> Arts (21)</li>
-            <li><input type="checkbox"> Business (12)</li>
-            <li><input type="checkbox"> Social (34)</li>
-            <li><input type="checkbox"> Healthcare (14)</li>
-            <li><input type="checkbox"> Technology (41)</li>
-            <li><input type="checkbox"> Marketing (18)</li>
-            <li><input type="checkbox"> Education (22)</li>
-            <li><input type="checkbox"> Finance (20)</li>
-            <li><input type="checkbox"> Food (39)</li>
-            <li><input type="checkbox"> Hospitality (23)</li>
-            <li><input type="checkbox"> Sales (9)</li>
-            <li>More</li>
         </ul>
     </div>
     </aside>
