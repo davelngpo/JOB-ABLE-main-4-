@@ -95,43 +95,49 @@
                     </div>
                 </div>
             </div>
-        
-                                
-            <div class="bottom-column">
-                <div class="left-column">
-                    <!-- Buttons for uploading job postings and making announcements -->
-                <div class="action-buttons">
-                    <button class="upload-job-btn" onclick="toggleJobPostingPopup()">Upload New Job Posting</button>
-                    <button class="announcement-btn" onclick="toggleJobAnnouncementPopup()">Make an Announcement</button>
-                </div>
-                    
-                    <?php $r2 = $connect->query($jobposting); 
+        <!--dito ko lapag yung sa job posting info-->
+        <section class="company-section">
+        <div class="profile-container">
+            <div class="action-buttons">
+                <button class="upload-job-btn" onclick="togglePopup('job-posting-popup')">Upload New Job Posting</button>
+                <button class="announcement-btn" onclick="togglePopup('job-announcement-popup')">Make an Announcement</button>
+            </div>
+        </div>
+    </section>
+                <!-- Company Jobs Posting -->
+                 
+                <!-- Company Jobs Posting -->
+<!-- Job Postings Section -->
+        <div class="job-listing">
+        <br>
+            <h2>JOB POSTINGS</h2>
+            <br>
+            
+            <div class="job-postings">
+                <div>
+                    <div>
+                    <?php
+                    #include '../../dbconnect.php';
+                    $sql = "SELECT jobposting_id, posting_title, posting_description FROM jobposting WHERE posting_title != 'Sample Job Title';";
+                    $result = $connect->query($sql);
 
-                        if($r2->num_rows >= 0):
-                    
-                        while($jobpost = $r2 -> fetch_assoc()):?>
-                        
-                        <div class="job-listing">
-                            <a href="job-posting-view-app.php?id=<?php echo $jobpost['jobposting_id'] ?>"><h2><?php echo $jobpost['posting_title'] ?></h2></a>
-                            <div class="job-description">
-                                <?php
-                                    $post_desc = $jobpost['posting_description'];
-                                    $max_len = 170;
-                                    echo strlen($post_desc) > $max_len? substr($post_desc, 0, $max_len) . "..." : $post_desc;
-                                ?>
-                            </div>
-                            <div class="job-categories">
-                                <?php foreach (explode(', ', $jobpost['categories']) as $category): ?>
-                                    <span class="job-category"><?php echo htmlspecialchars($category); ?></span>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                        <?php endwhile;
-                    else: ?>
-                    <p style="font-size: 2em;">Company does not currently have open job postings right now, come back next time!</p>
-                        
-                    <?php endif ?>
+                    if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<div class='job-item'><br>";
+                        echo "<h3>{$row['posting_title']}</h3><br>";
+                        echo "<p>{$row['posting_description']}</p><br>";
+                        echo "</div>";
+                    }
+                    } else {
+                    echo "<p>No job postings available.</p>";
+                    }
+                    ?> </div>
                 </div>
+            </div>
+        </div>
+
+            </div>
+        </div>
                 
                 <aside class="sidebar">
                     <h2>Personal Info</h2>
@@ -160,38 +166,126 @@
                     <?php } ?>
                 </aside>
             </div>
-<!-- Pop-up for Job Announcement -->
+<!-- Pop-up for New Job Posting -->
+<div class="popup" id="job-posting-popup">
+    <div class="overlay" onclick="toggleJobPostingPopup()"></div>
+    <div class="content">
+        <h1>Upload New Job Posting</h1>
+        <form action="upload_job.php" method="POST">
+            <!-- Job Title and Description -->
+            <textarea name="job_title" placeholder="Job Title" required></textarea>
+            <textarea name="job_description" placeholder="Job Description" required></textarea>
+
+            <!-- Dropdown for Categories -->
+            <div id="categories-dropdown-container" style="display: none;">
+                <label for="categories" class="dropdown-label">Select Categories:</label>
+                <select id="categories" name="categories[]" multiple required class="categories-dropdown" onchange="displaySelectedCategories()">
+                    <option value="Administration and Office Support">Administration and Office Support</option>
+                    <option value="Information Technology (IT)">Information Technology (IT)</option>
+                    <option value="Healthcare and Medicine">Healthcare and Medicine</option>
+                    <option value="Education and Training">Education and Training</option>
+                    <option value="Finance and Accounting">Finance and Accounting</option>
+                    <option value="Sales and Marketing">Sales and Marketing</option>
+                    <option value="Engineering and Architecture">Engineering and Architecture</option>
+                    <option value="Creative Arts and Design">Creative Arts and Design</option>
+                    <option value="Manufacturing and Production">Manufacturing and Production</option>
+                    <option value="Retail and Customer Service">Retail and Customer Service</option>
+                    <option value="Trades and Construction">Trades and Construction</option>
+                    <option value="Transportation and Logistics">Transportation and Logistics</option>
+                    <option value="Science and Research">Science and Research</option>
+                    <option value="Hospitality and Tourism">Hospitality and Tourism</option>
+                    <option value="Law and Legal Services">Law and Legal Services</option>
+                    <option value="Public Service and Government">Public Service and Government</option>
+                    <option value="Energy and Environment">Energy and Environment</option>
+                    <option value="Media and Communication">Media and Communication</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Food">Food</option>
+                    <option value="Entertainment and Performing Arts">Entertainment and Performing Arts</option>
+                </select>
+            </div>
+
+            <!-- Display Selected Categories -->
+            <div id="selected-categories-container">
+                <h4>Selected Categories:</h4>
+                <ul id="selected-categories-list"></ul>
+            </div>
+
+            <!-- Actions container with buttons -->
+            <div class="actions">
+                <button class="btn" type="button" onclick="showCategoriesDropdown()">Add Category</button>
+                <button class="btn" type="submit">Upload Job Posting</button>
+                <button class="btn cancel-btn" type="button" onclick="toggleJobPostingPopup()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript for Dropdown and Display -->
+<script>
+    // Function to show the categories dropdown
+    function showCategoriesDropdown() {
+        document.getElementById('categories-dropdown-container').style.display = 'block';
+    }
+
+    // Function to display selected categories
+    function displaySelectedCategories() {
+        const dropdown = document.getElementById('categories');
+        const selectedCategoriesList = document.getElementById('selected-categories-list');
+        
+        selectedCategoriesList.innerHTML = ''; // Clear previous list
+        
+        // Loop through options and find selected ones
+        for (const option of dropdown.options) {
+            if (option.selected) {
+                const listItem = document.createElement('li');
+                listItem.textContent = option.value;
+                selectedCategoriesList.appendChild(listItem);
+            }
+        }
+    }
+
+    // Function to toggle the job posting pop-up
+    function toggleJobPostingPopup() {
+        const popup = document.getElementById('job-posting-popup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
+<!-- Pop-up for Announcement -->
 <div class="popup" id="job-announcement-popup">
-        <div class="overlay" onclick="toggleJobAnnouncementPopup()"></div>
+        <div class="overlay" onclick="togglePopup('job-announcement-popup')"></div>
         <div class="content">
             <h1>Make an Announcement</h1>
-            <form action="make_announcement.php" method="POST">
-                <textarea name="announcement_message" placeholder="Write your announcement..." required></textarea>
+            <form action="upload_announcement.php" method="POST">
+                <textarea name="announcement" placeholder="Write your announcement here..." required></textarea>
                 <div class="actions">
-                    <button class="btn" type="submit">Post Announcement</button>
-                    <button class="btn cancel-btn" type="button" onclick="toggleJobAnnouncementPopup()">Cancel</button>
+                    <button class="btn" type="submit">Submit Announcement</button>
+                    <button class="btn cancel-btn" type="button" onclick="togglePopup('job-announcement-popup')">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
-    
 
     <script>
-        function toggleJobPostingPopup() {
-            document.getElementById("job-posting-popup").classList.toggle("active");
+        // Function to toggle popups
+        function togglePopup(popupId) {
+            const popup = document.getElementById(popupId);
+            popup.classList.toggle('active');
+            document.querySelector('.overlay').classList.toggle('active');
         }
 
-        function toggleJobAnnouncementPopup() {
-            document.getElementById("job-announcement-popup").classList.toggle("active");
+        // Function to close all popups
+        function closeAllPopups() {
+            document.querySelectorAll('.popup').forEach(popup => popup.classList.remove('active'));
+            document.querySelector('.overlay').classList.remove('active');
         }
 
-        
-        function showCategoriesDropdown() {
-            const dropdownContainer = document.getElementById("categories-dropdown-container");
-            dropdownContainer.style.display = dropdownContainer.style.display === "none" ? "block" : "none";
+        // Display selected categories in a list
+        function displaySelectedCategories() {
+            const selectedOptions = Array.from(document.getElementById('categories').selectedOptions);
+            const selectedList = document.getElementById('selected-categories-list');
+            selectedList.innerHTML = selectedOptions.map(option => `<li>${option.value}</li>`).join('');
         }
-
-
     </script>
                 
                         
