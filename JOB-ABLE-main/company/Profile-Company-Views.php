@@ -6,7 +6,6 @@
     <title>Profile Company View</title>
 
     <link rel="stylesheet" href="Profile-Company-Views.css">
-    <link rel="stylesheet" href="../../header.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">

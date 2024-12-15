@@ -97,7 +97,7 @@
             </div>
 
             <div class="icons">
-                <a href="Profile-Company-View.php"><img class="profile" src="../assets/account icon.png" alt="Account"></a>
+                <a href="Profile-Company-Views.php"><img class="profile" src="../assets/account icon.png" alt="Account"></a>
             </div>
         </div>
     </header>
