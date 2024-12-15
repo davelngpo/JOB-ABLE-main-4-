@@ -1,0 +1,124 @@
+/* Full-Screen Overlay */
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+/* Full-Screen Pop-Up Content */
+.popup2 .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #d3dddf;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    width: 580px;
+    z-index: 2;
+    text-align: left;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: all 300ms ease-in-out;
+    max-height: 90vh;  /* To prevent overflowing the screen */
+    overflow-y: auto;  /* Allow scroll if content is too long */
+}
+
+/* Header */
+.popup .header {
+    margin-bottom: 20px;
+}
+
+.popup .company-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #071525;
+}
+
+/* Message container styling */
+.popup .message-container {
+    background-color: #f9f9f9;
+    color: #141a20;
+    padding: 90px;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* Action buttons */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Buttons styling */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.cancel-btn {
+    background-color: #327df7;
+    color: #fff;
+}
+
+.cancel-btn:hover {
+    background-color: #2684f0;
+    transform: scale(1.05);
+}
+
+.post-btn {
+    background-color: #589aeb;
+    color: #fff;
+}
+
+.post-btn:hover {
+    background-color: #58afe6;
+    transform: scale(1.05);
+}
+
+/* Activate pop-up */
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Icons */
+.icons {
+    display: flex;
+    gap: 8px;
+    margin-right: 10px;
+    font-size: 18px;
+    color: #071525;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.icons i:hover {
+    color: #589aeb;
+    transform: scale(1.2);
+}
