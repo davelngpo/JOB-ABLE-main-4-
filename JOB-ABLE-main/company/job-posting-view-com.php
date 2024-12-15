@@ -1,3 +1,9 @@
+<?php
+    include '../dbconnect.php';
+    include 'logout-com.php';
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

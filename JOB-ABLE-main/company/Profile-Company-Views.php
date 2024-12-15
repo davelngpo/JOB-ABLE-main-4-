@@ -1,3 +1,10 @@
+<?php
+    include '../dbconnect.php';
+    include 'logout-com.php';
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +67,7 @@
                     <h1>Company Name</h1>
                     <div class="button-container"> 
                         <button class="edit-profile-bttn">Edit Profile</button>
-                        <a href="../../JobAbleMain.html"><button class="logout-bttn">Logout</button></a>
+                        <a href="logout.php"><button class="logout-bttn">Logout</button></a>
                     </div>
                     <br>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam maxime porro expedita natus cupiditate earum voluptatibus voluptas, non perspiciatis, obcaecati, totam provident repudiandae asperiores voluptates laboriosam. Eaque dolore autem quod?</p>
