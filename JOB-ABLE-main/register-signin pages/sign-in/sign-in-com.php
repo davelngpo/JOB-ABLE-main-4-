@@ -26,7 +26,7 @@
             if (password_verify($password, $row['password'])) {
                 session_start();
                 $_SESSION['company_id'] = $row['company_id'];
-                header("location: ../../company/JOBABLE-homepage/home.html");
+                header("location: ../../company/home.html");
                 exit();
                 
             } else {
