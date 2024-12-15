@@ -95,6 +95,7 @@
                 </div>
                 <!-- Sidebar Section -->
                 <aside class="sidebar">
+                    <h2>Personal Info</h2>
                     <?php
                         $r = $connect->query($applicant);
                         while($app_details = $r -> fetch_assoc()){

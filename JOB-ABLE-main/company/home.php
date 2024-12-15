@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Job-Able</title>
 <link rel="stylesheet" href="home.css"> <!-- pachange ako kung ano man ilagay nyo css name-->
-<link rel="stylesheet" href="../../header.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
+    <?php include 'header-com.php' ?>
 
 <!-- Header -->
-<header>
+<!-- <header>
     <div class="web-name">
         <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
     </div>
@@ -30,7 +31,7 @@
             <a href="../JOBABLE-profile-view/Profile-Company-Views.html"><img class="profile" src="/JOB-ABLE-main/assets/account icon.png" alt="Account"></a>
         </div>
     </div>
-</header>
+</header> -->
 
 <br><br><br><br><br><br>
 <!-- <div class="header">

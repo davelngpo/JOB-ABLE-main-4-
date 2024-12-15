@@ -54,6 +54,21 @@ body{
     display: flex;
 }
 
+.job-posting .post-profile .apply{
+    font-size: 1.5em;
+    margin: 10px 20px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #6574f7;
+    color: white;
+    transition: 0.3s;
+}
+
+.job-posting .post-profile .apply:hover{
+    background-color: #424a97;
+}
+
 .post-contents{
     padding: 20px;
 }

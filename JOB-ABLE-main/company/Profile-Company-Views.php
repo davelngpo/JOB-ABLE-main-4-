@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <?php include 'header-com.php' ?>
+    <!-- <header>
         <div class="web-name">
             <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
         </div>
@@ -28,7 +29,7 @@
                 <a href="../JOBABLE-profile-view/Profile-Company-Views.html"><img class="profile" src="/JOB-ABLE-main/assets/account icon.png" alt="Account"></a>
             </div>
         </div>
-    </header>
+    </header> -->
     
     <br><br><br><br><br><br>
     <!-- <header>

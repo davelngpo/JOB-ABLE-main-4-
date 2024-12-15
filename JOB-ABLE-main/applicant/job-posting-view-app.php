@@ -1,16 +1,35 @@
 <?php
     include '../dbconnect.php';
+    include 'logout-app.php';
 
     $id = $_GET['id'];
+
+    $user = $app_user;
 
     $jobposting = "SELECT *,
                 GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories
                 FROM jobposting jp
                 join companies c ON jp.company_id = c.company_id
                 join job_categories jc on jc.jobposting_id = jp.jobposting_id
+                join applicant_list al on al.jobposting_id = jp.jobposting_id
                 WHERE jp.jobposting_id = $id
                 GROUP BY jp.jobposting_id ";
 
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $applicant = $_POST['applicant_id'];
+        $jobposting_id = $_POST['jobposting_id'];
+
+        $stmt = $connect->prepare("INSERT INTO applicant_list (applicant_id, jobposting_id) VALUES (?, ?)");
+        $stmt->bind_param("ii", $applicant, $jobposting_id);
+
+        if ($stmt->execute()) {
+            echo "New record created successfully!";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +45,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include 'logout-app.php' ?>
+    
     <?php include 'header-app.php' ?>
     
     <br><br><br><br><br><br><br>
@@ -43,6 +62,13 @@
                         <div><?php echo $jobpost['company_name'] ?></div> <div class="time"><?php echo $jobpost['date_posted'] ?></div>
                     </div>
                 </div>
+                
+                <form method="post">
+                    <input type="hidden" name="jobposting_id" value="<?php echo $id ?>">
+                    <input type="hidden" name="applicant_id" value="<?php echo $user ?>">
+                    <button class="apply" name="apply" type="submit">Apply for Job</button>
+                </form>
+                
             </div>
             
             <br>

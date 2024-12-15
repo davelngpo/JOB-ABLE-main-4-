@@ -17,6 +17,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<style>
+    a{
+        text-decoration: none;
+    }
+</style>
+
 </head>
 <body>
 <?php include 'logout-app.php' ?>
@@ -58,7 +64,7 @@
             <div class="job-company"><?php echo $jobpost['company_name'] ?></div>
             <span style="color: rgba(9, 22, 78, 0.5);"><?php echo $jobpost['date_posted'] ?></span>
         </div>
-        <div class="job-title"><?php echo $jobpost['posting_title'] ?></div>
+        <a href="job-posting-view-app.php?id=<?php echo $jobpost['jobposting_id'] ?>"><div class="job-title"><?php echo $jobpost['posting_title'] ?></div></a>
         <div class="job-description">
             <?php
                 $post_desc = $jobpost['posting_description'];

@@ -218,6 +218,7 @@ section.applicant-section {
     width: 25%; /* Sidebar is on the right with some spacing */
     padding: 20px 30px;
     background-color: #ffffff;
+    color: #09164ea9;
     border-radius: 8px;
     box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
     float: right;
@@ -225,6 +226,12 @@ section.applicant-section {
 
 .sidebar div{
     margin: 10px;
+    color: #09164E;
+}
+
+.sidebar h2{
+    font-size: 1.5em;
+    font-family: 'Mohave';
 }
 
 .sidebar div h4{
@@ -233,7 +240,8 @@ section.applicant-section {
 }
 
 .sidebar div p{
-    font-family: 'Montserrat';
+    font-family: 'Onest';
+    opacity: 80%;
     font-size: 1em;
     padding: 0 0 0 27.5px;
 }
