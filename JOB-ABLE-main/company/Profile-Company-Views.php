@@ -18,7 +18,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <?php include 'header-com.php' ?>
+    <?php include 'header-com.php' ;
+    $user = $_SESSION['company_id'];
+        
+    $company = "SELECT
+                    a.*
+                    from companies a
+                    where a.company_id = $user
+                    ";
+
+    $jobposting = "SELECT jp.*, c.*, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp JOIN companies c ON c.company_id = jp.company_id JOIN job_categories jc ON jp.jobposting_id = jc.jobposting_id WHERE jp.company_id = 7 GROUP BY jp.jobposting_id";
+
+    ?>
     <!-- <header>
         <div class="web-name">
             <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
@@ -28,7 +39,7 @@
             <div class="options">
                 <a href="../JOBABLE-homepage/home.html">HOME</a>
                 <a href="http://">MORE</a>
-            </div>
+            </div>  
     
             <div class="icons">
                 <img class="notif" src="/JOB-ABLE-main/assets/notification icon.png" alt="Notification">
@@ -53,80 +64,106 @@
     </header> -->
 
     <!--COMPANY PROFILE-->
-<section class="company-section">
-    <div class="profile-container">
-        <!-- Left Column (Company Profile Section) -->
-        <div class="left-column">
-            <!-- Company Profile Section -->
-            <div class="profile-header">
-                <div class="profile-picture">
-                    <img src="applicant-photo.jpg" alt="Applicant Picture">
-                </div>
-                <div class="company-details">
-                    <br>
-                    <h1>Company Name</h1>
-                    <div class="button-container"> 
-                        <button class="edit-profile-bttn">Edit Profile</button>
-                        <a href="logout.php"><button class="logout-bttn">Logout</button></a>
+
+    <section class="company-section">
+        <div class="profile-container">
+            <div class="top-column">
+                <div class="profile-header">
+                    <div class="profile-picture">
+                        <img src="company-photo.jpg" alt="Company Picture">
                     </div>
-                    <br>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam maxime porro expedita natus cupiditate earum voluptatibus voluptas, non perspiciatis, obcaecati, totam provident repudiandae asperiores voluptates laboriosam. Eaque dolore autem quod?</p>
-                </div>
-            </div>
+                     
+                    <div class="company-details">
+                        <div class="company">
+                            <?php
+                                $r = $connect->query($company);
+                                while($com_details = $r -> fetch_assoc()){
+                            ?>
+                            <h1><?php echo $com_details['company_name'] ?></h1>
 
-           
-             <!-- Buttons for uploading job postings and making announcements -->
-            <div class="action-buttons">
-                <button class="upload-job-btn">Upload New Job Posting</button>
-                <button class="announcement-btn">Make an Announcement</button>
-            </div> 
-             <!-- Company Jobs Posting -->
-            <div class="job-listing">
-                <h2>COMPANY JOB LISTING</h2>
-
-                <div class="job-listings">
-                    <div class="job-posting">
-                        <h1>COMPANY NAME</h1>
+                            <p class="desc"><?php echo $com_details['company_description'] ?></p>
+                            <?php } ?>
+                        </div>
+                        
+                        <div class="button-container"> <!-- Button container for right alignment -->
+                            <button class="edit-profile-bttn">Edit Profile</button>
+                            <a href="logout.php"><button class="logout-bttn" onclick="alert('Are you sure?')">Logout</button></a>
+                        </div>
                         <br>
-                        <p><strong>Job Posting 1#</strong></p>
-                        <br>
-                        <a href="../JOBABLE posting view pages/job-posting-view-com.html"><p>Job Description</p></a>
-                        <br>
-                        <button class="category-btn">Category 1</button>
-                        <button class="category-btn">Category 2</button>
-                    </div>
-                </div>
-
-                <!-- New Job Listings -->
-                <div class="other-job-listings">
-                    <div class="job-posting">
-                        <h1>COMPANY NAME</h1>
-                        <br>
-                        <p><strong>Job Posting 2#</strong></p>
-                        <br>
-                        <p>New Job Description</p>
-                        <br>
-                        <button class="category-btn">Category 1</button>
-                        <button class="category-btn">Category 2</button>
+                    
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        
+        
+            <div class="bottom-column">
+                <div class="left-column">
+                    <div class="action-buttons">
+                        <button class="upload-job-btn">Upload New Job Posting</button>
+                        <button class="announcement-btn">Make Announcement</button>
+                    </div> 
+                    
+                    <?php $r2 = $connect->query($jobposting); 
 
-    <!-- Sidebar Section -->
-    <aside class="sidebar">
-        <div class="contact-info">
-            <h4>📧 Company Email</h4>
-            <p>Company@gmail.com</p>
-            <h4>📍 Company Location</h4>
-            <p>Details</p>
-            <h4>🌐 Website</h4>
-            <p>www.Companywebsite.com</p>
-            <h4>🔗 LinkedIn</h4>
-            <p>linkedin.com/in/applicant</p>
-        </div>
-    </aside>
+                        if($r2->num_rows >= 0):
+                    
+                        while($jobpost = $r2 -> fetch_assoc()):?>
+                        
+                        <div class="job-listing">
+                            <a href="job-posting-view-app.php?id=<?php echo $jobpost['jobposting_id'] ?>"><h2><?php echo $jobpost['posting_title'] ?></h2></a>
+                            <div class="job-description">
+                                <?php
+                                    $post_desc = $jobpost['posting_description'];
+                                    $max_len = 170;
+                                    echo strlen($post_desc) > $max_len? substr($post_desc, 0, $max_len) . "..." : $post_desc;
+                                ?>
+                            </div>
+                            <div class="job-categories">
+                                <?php foreach (explode(', ', $jobpost['categories']) as $category): ?>
+                                    <span class="job-category"><?php echo htmlspecialchars($category); ?></span>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <?php endwhile;
+                    else: ?>
+                    <p style="font-size: 2em;">Company does not currently have open job postings right now, come back next time!</p>
+                        
+                    <?php endif ?>
+                </div>
+                
+                <aside class="sidebar">
+                    <h2>Personal Info</h2>
+                    <?php
+                        $r = $connect->query($company);
+                        while($com_details = $r -> fetch_assoc()){
+                    ?>
+                    <div>
+                        <h4>📧 Email</h4>
+                        <p><?php echo $com_details['company_email'] ?></p>
+                    </div>
+                    <div>
+                        <h4>📍 Industry</h4 >
+                        <p><?php echo $com_details['industry_type'] ?></p>
+                    </div>
+                    <div>
+                        <h4>📍 Location</h4 >
+                        <p><?php echo $com_details['branch'] . " Branch, " . $com_details['postal_address'] ?></p>
+                    </div>
+                    <div>
+                        <h4>📂 Website</h4>
+                        <p><?php echo $com_details['company_website'] ?></p>
+                    </div>
+                    
+
+                    <?php } ?>
+                </aside>
+            </div>
+
+                
+                        
+                
+            </div>
+         </div>   
 </section>
                   
 </body>

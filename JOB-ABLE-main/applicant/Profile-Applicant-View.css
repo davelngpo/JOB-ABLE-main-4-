@@ -54,7 +54,7 @@ section.applicant-section {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    width: 250%; /* Ensures the profile and sidebar fill the available width */
+    width: 250%;
 }
 
 .top-column {
@@ -113,7 +113,6 @@ section.applicant-section {
 
 .applicant-details {
     display: flex;
-    justify-content: space-between;
 }
 
 .applicant-details .applicant{
@@ -216,6 +215,7 @@ section.applicant-section {
 
 .sidebar {
     width: 25%; /* Sidebar is on the right with some spacing */
+    height: fit-content;
     padding: 20px 30px;
     background-color: #ffffff;
     color: #09164ea9;
