@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    background-color: #f0f0f0f0;
+}
+
+.sign-in{
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-panel {
+    background-color: #3d68f5;
+    color: white;
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 20px 0 0 20px;
+
+}
+
+.left-panel .left-contents{
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+    margin: 30px;
+    height: 100%;
+}
+
+.left-panel .left-contents .div1 h1 {
+    font-size: 5em;
+    font-weight: 800;
+    font-family: 'Montserrat';
+    margin: 0;
+}
+
+.left-panel .left-contents .div1 .highlight {
+    color: #f6c24e;
+}
+
+.left-panel .left-contents p {
+    font-size: 30px;
+    font-family: 'Mohave';
+    margin: 0;
+}
+
+.left-panel .left-contents  a {
+    color: #f6c24e;
+    text-decoration: none;
+}
+
+.left-panel .left-contents .div1{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+.left-panel .left-contents .div2{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-panel{
+    background-color: white;
+    width: 600px;
+    height: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 20px 20px 0;
+    
+}
+
+.right-panel .logo{
+    width: 150px;
+    height: 150px;
+    background-color: #3d68f5;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.right-panel form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.right-panel form .forms{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.right-panel form .forms input{
+    width: 100%;
+    padding: 15px 15px;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border: 2px solid #A6ADCD;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.right-panel form .forms label{
+    font-size: 1.3em;
+    color: #66709D;
+    font-family: 'Onest';
+    margin: -8  px 0;
+}
+
+.right-panel form .signin-button {
+    margin: 20px 10px;
+    padding: 15px 50px;
+    font-size: 1.4em;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #3d68f5;
+    color: #f6c24e;
+    font-weight: bold;
+    
+}

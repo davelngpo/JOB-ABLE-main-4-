@@ -31,13 +31,13 @@
                 
             } else {
                 header("location: sign-in-Company.html"); //incorrect password
-                echo "<script>console.log('PHP incorrect pass')</script>";
+                echo "<script>alert('PHP incorrect pass')</script>";
                 exit();
             }
 
         } else {
             header("location: sign-in-Company.html"); //user not found
-            echo "<script>console.log('PHP user not found')</script>";
+            echo "<script>alert('PHP user not found')</script>";
             exit();
         }
     

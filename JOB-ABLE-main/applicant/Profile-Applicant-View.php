@@ -95,19 +95,29 @@
                 </div>
                 <!-- Sidebar Section -->
                 <aside class="sidebar">
-                    <div class="contact-info">
-                        <h4>📞 Phone Number</h4>
-                        <p>+63 912 345 6789</p>
+                    <?php
+                        $r = $connect->query($applicant);
+                        while($app_details = $r -> fetch_assoc()){
+                    ?>
+                    <div>
                         <h4>📧 Email</h4>
-                        <p>applicantemail@gmail.com</p>
-                        <h4>🔗 LinkedIn</h4>
-                        <p>linkedin.com/in/applicant</p>
+                        <p><?php echo $app_details['email'] ?></p>
                     </div>
-                    <div class="personal-documents">
-                        <h4>📂 Personal Documents</h4>
-                        <p><a href="#">Resume.pdf</a></p>
-                        <p><a href="#">Portfolio.pdf</a></p>
+                    <div>
+                        <h4>📞 Phone Number</h4 >
+                        <p><?php echo $app_details['contact_number'] ?></p>
                     </div>
+                    <div>
+                        <h4>📍 Location</h4 >
+                        <p><?php echo $app_details['postal_address'] ?></p>
+                    </div>
+                    <div>
+                        <h4>📂 Education Attainment</h4>
+                        <p><?php echo $app_details['highest_educational_attainment'] ?></p>
+                    </div>
+                    
+
+                    <?php } ?>
                 </aside>
             </div>
         </div>

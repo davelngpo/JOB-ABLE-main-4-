@@ -95,11 +95,9 @@
             <div class="options">
                 <a href="home_page_applicant.php">HOME</a>
                 <a href="browse_page_applicant.php">BROWSE</a>
-                <a href="http://">MORE</a>
             </div>
 
             <div class="icons">
-                <img class="notif" src="../assets/notification icon.png" alt="Notification">
                 <a href="Profile-Applicant-View.php"><img class="profile" src="../assets/account icon.png" alt="Account"></a>
             </div>
         </div>

@@ -3,33 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sign-in-Applicant.css">
+    <link rel="stylesheet" href="sign-in.css">
     <title>Sign in as an Applicant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700" rel="stylesheet"><link href='https://fonts.googleapis.com/css?family=Mohave' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sign-in-applicant">
+    <div class="sign-in">
         <div class="left-panel">
-            <p>Let's sign you in...</p>
-            <h1><span class="highlight">WELCOME </span>BACK</h1> <br> <br>
-            <p>Are you new here? <a href="../register-2/register-page-app.html">Create an account.</a></p>
-        </div>
-        
-        <div class="right-panel">
-            <div class="logo"></div>
-
-            <div class="forms">
-                <form action="sign-in-app.php" method="post">
-
-
-                    <input type="email" name="email" id="email" placeholder="enter your email" required>
-
-                    <label for="password">  </label> <br>
-                    <input type="password" name="password" id="password" placeholder="enter your password" required>
-
-                    <button type="submit" class="signin-button">SIGN IN</button>
-
-                </form>
+            <div class="left-contents">
+                <div class="div1">
+                    <p>Let's sign you in...</p>
+                    <h1><span class="highlight">WELCOME </span>BACK</h1>
+                </div>
+                
+                <div class="div2">
+                    <p>Are you new here? <a href="../register-2/register-page-app.html">Create an account.</a></p>
+                </div>
             </div>
+        </div>
+    
+    <div class="right-panel">
+        <div class="logo"></div>
+
+            <form action="sign-in-app.php" method="post">
+                <div class="forms">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" placeholder="enter your email" required>
+                </div>
+                
+
+                <div class="forms">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" placeholder="enter your password" required>
+                </div>
+                
+
+                <button type="submit" class="signin-button">SIGN IN</button>
+            </form>
         </div>
     </div>
     

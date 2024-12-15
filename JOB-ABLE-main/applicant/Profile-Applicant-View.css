@@ -60,7 +60,7 @@ section.applicant-section {
 .top-column {
     display: flex;
     
-    width: 100%; /* Adjust width to fit most of the space */
+    width: 100%;
 }
 
 .bottom-column {
@@ -70,7 +70,7 @@ section.applicant-section {
 }
 
 .sidebar {
-    width: 25%; /* Sidebar is on the right with some spacing */
+    width: 25%; 
     padding: 40px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -213,32 +213,27 @@ section.applicant-section {
     font-size: 1.1em;
 }
 
-.pagination {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
+
+.sidebar {
+    width: 25%; /* Sidebar is on the right with some spacing */
+    padding: 20px 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
+    float: right;
 }
 
-.pagination a {
-    text-decoration: none;
-    color: #4261dc;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.sidebar div{
+    margin: 10px;
 }
 
-.contact-info h4, .personal-documents h4 {
-    margin-bottom: 5px;
-    font-size: 14px;
+.sidebar div h4{
+    font-size: 1em;
+    font-family: 'Montserrat';
 }
 
-.contact-info p, .personal-documents p {
-    margin-bottom: 15px;
-    font-size: 14px;
-    color: gray;
-}
-
-.personal-documents a {
-    text-decoration: none;
-    color: #4261dc;
+.sidebar div p{
+    font-family: 'Montserrat';
+    font-size: 1em;
+    padding: 0 0 0 27.5px;
 }

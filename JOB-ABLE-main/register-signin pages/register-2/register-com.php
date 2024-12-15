@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $confirm_password = $_POST['confirm_password'];
 
         if($password !== $confirm_password){
-            header("location: register-page-com.php?error=Passwords do not match!");
+            header("location: register-page-com.html?error=Passwords do not match!");
             exit();
         }
 
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $stmt->store_result();
 
         if ($stmt->num_rows > 0) {
-            header("Location: register-page-com.php?error=Email is taken");
+            header("Location: register-page-com.html?error=Email is taken");
             $stmt->close();
             $conn->close();
             exit;
