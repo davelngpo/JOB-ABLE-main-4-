@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #E9EBF4;
 }
 
 .action-buttons-container {
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 8px; 
-    width: 90%;
+    width: 80%;
     margin: 20px auto; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -80,6 +80,7 @@ body {
     border-radius: 50%;
 }
 .job-title {
+    font-family: 'Montserrat';
     font-size: 20px;
     font-weight: bold;
     color: #333;

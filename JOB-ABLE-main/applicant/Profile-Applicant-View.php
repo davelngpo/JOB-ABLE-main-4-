@@ -50,8 +50,13 @@
                             <?php } ?>
                         </div>
                         
+<<<<<<< Updated upstream
                         <div class="button-container"> <!-- Button container for right alignment -->
                             <a href="logout.php"><button class="logout-bttn">Logout</button></a>
+=======
+                        <div class="button-container">
+                            <a href="logout.php"><button class="logout-bttn" onclick="alert('Are you sure?')">Logout</button></a>
+>>>>>>> Stashed changes
                         </div>
                         <br>
                     

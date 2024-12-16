@@ -1,6 +1,9 @@
 <?php
     include '../dbconnect.php';
     include 'logout-com.php';
+
+    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id limit 3";
+
 ?>
 
 <!DOCTYPE html>
@@ -19,40 +22,8 @@
 <body>
     <?php include 'header-com.php' ?>
 
-<!-- Header -->
-<!-- <header>
-    <div class="web-name">
-        <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
-    </div>
-
-    <div class="nav">
-        <div class="options">
-            <a href="../JOBABLE-homepage/home.html">HOME</a>
-            <a href="http://">MORE</a>
-        </div>
-
-        <div class="icons">
-            <img class="notif" src="/JOB-ABLE-main/assets/notification icon.png" alt="Notification">
-            <a href="../JOBABLE-profile-view/Profile-Company-Views.html"><img class="profile" src="/JOB-ABLE-main/assets/account icon.png" alt="Account"></a>
-        </div>
-    </div>
-</header> -->
 
 <br><br><br><br><br><br>
-<!-- <div class="header">
-    <div class="logo">
-        <div style="width: 20px; height: 20px; background-color: #f1c40f; border-radius: 50%; margin-right: 8px;"></div>
-        JOB-<span>ABLE</span>
-    </div>
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">More</a>
-        <a href="#">&#128276;</a>
-        <a href="../JOBABLE-profile-view/Profile-Company-Views.html">&#128100;</a>
-    </div>
-</div> -->
-
-<!-- Action Buttons Section -->
 <div class="action-buttons-container">
     <div class="action-buttons">
         <button>Upload New Job Posting</button>
@@ -82,6 +53,7 @@
     </div>
 </div>
 
+<<<<<<< Updated upstream
 <?php } ?>
 
 <div class="job-card">
@@ -102,3 +74,6 @@
         <span class="job-category">Category 2</span>
     </div>
 </div>
+=======
+</body>
+>>>>>>> Stashed changes
