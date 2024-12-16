@@ -1,7 +1,6 @@
 <?php
-    include '../disdbconnect.php';
+    include '../dbconnect.php';
     include 'logout-com.php';
-    include
 
     $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id limit 3";
 
