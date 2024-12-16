@@ -56,18 +56,20 @@
 <div class="action-buttons-container">
     <div class="action-buttons">
         <button>Upload New Job Posting</button>
-        <button>Make Announcement</button>
     </div>
 </div>
 
+<?php $r = $connect->query($jobposting); 
+
+    while($jobpost = $r -> fetch_assoc()){?>
 
 <div class="job-card">
     <div class="job-header">
         <div class="left-section">
             <div class="company-icon"></div>
             <div>
-                <div class="job-title">Company Name</div>
-                <div class="job-time">1 hr</div>
+                <div class="job-title"><?php echo $jobpost['company_name'] ?></div>
+                <div class="job-time"><?php echo $jobpost['date_posted'] ?></div>
             </div>
         </div>
         <button class="edit-button">Edit</button>
@@ -79,6 +81,8 @@
         <span class="job-category">Category 2</span>
     </div>
 </div>
+
+<?php } ?>
 
 <div class="job-card">
     <div class="job-header">
