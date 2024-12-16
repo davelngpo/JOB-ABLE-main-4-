@@ -2,8 +2,9 @@
     include '../dbconnect.php';
     include 'logout-com.php';
 
-    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id limit 3";
+    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id DESC limit 3";
 
+    $category = "SELECT category_name FROM `job_categories` LIMIT 4";
 ?>
 
 <!DOCTYPE html>
@@ -39,41 +40,27 @@
         <div class="left-section">
             <div class="company-icon"></div>
             <div>
-                <div class="job-title"><?php echo $jobpost['company_name'] ?></div>
+                <div class="job-company"><?php echo $jobpost['company_name'] ?></div>
                 <div class="job-time"><?php echo $jobpost['date_posted'] ?></div>
             </div>
         </div>
-        <button class="edit-button">Edit</button>
     </div>
-    <div class="job-title">JOB POSTING 1#</div>
-    <div class="job-description">Job Description... <a href="../JOBABLE posting view pages/job-posting-view-com.html">see more.</a></div>
+    <div class="job-title"><?php echo $jobpost['posting_title'] ?></div>
+    <div class="job-description">
+        <?php
+            $post_desc = $jobpost['posting_description'];
+            $max_len = 160;
+            echo strlen($post_desc) > $max_len? substr($post_desc, 0, $max_len) . "..." : $post_desc;
+        ?>
+        <a href="../JOBABLE posting view pages/job-posting-view-com.html">see more.</a>
+    </div>
     <div class="job-categories">
-        <span class="job-category">Category 1</span>
-        <span class="job-category">Category 2</span>
+        <?php foreach (explode(', ', $jobpost['categories']) as $category): ?>
+            <span class="job-category"><?php echo htmlspecialchars($category); ?></span>
+        <?php endforeach; ?>
     </div>
 </div>
 
-<<<<<<< Updated upstream
 <?php } ?>
 
-<div class="job-card">
-    <div class="job-header">
-        <div class="left-section">
-            <div class="company-icon"></div>
-            <div>
-                <div class="job-title">Company Name</div>
-                <div class="job-time">2 hr</div>
-            </div>
-        </div>
-        <button class="edit-button">Edit</button>
-    </div>
-    <div class="job-title">JOB POSTING 2#</div>
-    <div class="job-description">Job Description... <a href="#">see more.</a></div>
-    <div class="job-categories">
-        <span class="job-category">Category 1</span>
-        <span class="job-category">Category 2</span>
-    </div>
-</div>
-=======
 </body>
->>>>>>> Stashed changes

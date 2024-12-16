@@ -78,7 +78,6 @@
                     </div>
                 </div>
             </div>
-<<<<<<< Updated upstream
         <!--dito ko lapag yung sa job posting info-->
         <section class="company-section">
         <div class="profile-container">
@@ -104,18 +103,6 @@
                     #include '../../dbconnect.php';
                     $sql = "SELECT jobposting_id, posting_title, posting_description FROM jobposting WHERE posting_title != 'Sample Job Title';";
                     $result = $connect->query($sql);
-=======
-        
-                                
-            <div class="bottom-column">
-                <div class="left-column">
-                    <!-- Buttons for uploading job postings and making announcements -->
-                <div class="action-buttons">
-                    <button class="upload-job-btn" onclick="toggleJobPostingPopup()">Upload New Job Posting</button>
-                </div>
-                    
-                    <?php $r2 = $connect->query($jobposting); 
->>>>>>> Stashed changes
 
                     if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
@@ -129,9 +116,6 @@
                     }
                     ?> </div>
                 </div>
-            </div>
-        </div>
-
             </div>
         </div>
                 
