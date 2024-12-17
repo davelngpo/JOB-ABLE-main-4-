@@ -4,6 +4,8 @@
 
     $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id limit 3";
 
+    $category = "SELECT category_name FROM `job_categories` LIMIT 4";
+
 ?>
 
 <!DOCTYPE html>
@@ -79,73 +81,60 @@
                 </div>
             </div>
         <!--dito ko lapag yung sa job posting info-->
-        <section class="company-section">
-        <div class="profile-container">
-            <div class="action-buttons">
-                <button class="upload-job-btn" onclick="togglePopup('job-posting-popup')">Upload New Job Posting</button>
-                
-            </div>
+        <section class="bottom">
+        <div class="btn-container">
+            <button class="upload-job-btn" onclick="togglePopup('job-posting-popup')">Upload New Job Posting</button>
         </div>
     </section>
-                <!-- Company Jobs Posting -->
-                 
-                <!-- Company Jobs Posting -->
-<!-- Job Postings Section -->
+    <div class="division">
         <div class="job-listing">
-        <br>
-            <h2>JOB POSTINGS</h2>
-            <br>
-            
-            <div class="job-postings">
-                <div>
-                    <div>
-                    <?php
-                    #include '../../dbconnect.php';
-                    $sql = "SELECT jobposting_id, posting_title, posting_description FROM jobposting WHERE posting_title != 'Sample Job Title';";
-                    $result = $connect->query($sql);
-
-                    if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='job-item'><br>";
-                        echo "<h3>{$row['posting_title']}</h3><br>";
-                        echo "<p>{$row['posting_description']}</p><br>";
-                        echo "</div>";
-                    }
-                    } else {
-                    echo "<p>No job postings available.</p>";
-                    }
-                    ?> </div>
+        
+            <?php
+            $sql = "SELECT *FROM jobposting jp  join companies c on jp.company_id = c.company_id WHERE jp.company_id = $user;";
+            $result = $connect->query($sql);
+                while($jobposting = $result -> fetch_assoc()){
+            ?>
+                <div class="jobposting-container">
+                    <h2><?php echo $jobposting['posting_title'] ?></h2>
+                    <div class="job-description">
+                        <p><?php echo $jobposting['posting_description'] ?></p>
+                    </div>
+                    <div class="date"><?php echo $jobposting['date_posted'] ?></div>
                 </div>
-            </div>
-        </div>
-                
-                <aside class="sidebar">
-                    <h2>Personal Info</h2>
-                    <?php
-                        $r = $connect->query($company);
-                        while($com_details = $r -> fetch_assoc()){
-                    ?>
-                    <div>
-                        <h4>📧 Email</h4>
-                        <p><?php echo $com_details['company_email'] ?></p>
-                    </div>
-                    <div>
-                        <h4>📍 Industry</h4 >
-                        <p><?php echo $com_details['industry_type'] ?></p>
-                    </div>
-                    <div>
-                        <h4>📍 Location</h4 >
-                        <p><?php echo $com_details['branch'] . " Branch, " . $com_details['postal_address'] ?></p>
-                    </div>
-                    <div>
-                        <h4>📂 Website</h4>
-                        <p><?php echo $com_details['company_website'] ?></p>
-                    </div>
                     
-
-                    <?php } ?>
-                </aside>
+            <?php } ?>
+                    
+        </div>
+            
+        <aside class="sidebar">
+            <h2>Personal Info</h2>
+            <?php
+                $r = $connect->query($company);
+                while($com_details = $r -> fetch_assoc()){
+            ?>
+            <div>
+                <h4>📧 Email</h4>
+                <p><?php echo $com_details['company_email'] ?></p>
             </div>
+            <div>
+                <h4>💼 Industry</h4 >
+                <p><?php echo $com_details['industry_type'] ?></p>
+            </div>
+            <div>
+                <h4>📍 Location</h4 >
+                <p><?php echo $com_details['branch'] . " Branch, " . $com_details['postal_address'] ?></p>
+            </div>
+            <div>
+                <h4>🖥️ Website</h4>
+                <p><?php echo $com_details['company_website'] ?></p>
+            </div>
+            
+
+            <?php } ?>
+        </aside>
+    </div>
+</div>
+        
 <!-- Pop-up for New Job Posting -->
 <div class="popup" id="job-posting-popup">
     <div class="overlay" onclick="toggleJobPostingPopup()"></div>

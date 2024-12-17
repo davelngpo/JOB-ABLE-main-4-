@@ -43,7 +43,14 @@ section.company-section {
     max-width: 1200px; /* Optional max width */
 }
 
-.profile-container {
+section.bottom{
+    display: flex;
+    justify-content: space-between; /* Ensures content and sidebar are spaced */
+    margin: 30px 0 20px;
+    width: 90%;
+}
+
+.btn-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -101,7 +108,7 @@ section.company-section {
 }
 
 .company-details {
-    padding: 10px;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -142,12 +149,12 @@ section.company-section {
     display: flex;
     gap: 10px;
 }
-.edit-profile-bttn,
+
 .logout-bttn {
-    padding: 10px 20px;
+    padding: 8px 20px;
     border: none;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 5px;
     cursor: pointer;
     font-size: 1em;
     
@@ -163,31 +170,46 @@ section.company-section {
     color: white;
 }
 
-.job-listing {  /*container*/
-    background-color: rgb(255, 255, 255);
-    padding: 30px;
-    border-radius: 15px;
-    width: 100%;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
+.job-listing {  
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 20px;
 }   
 
 .job-listing a{
     text-decoration: none;
 }
 
-.job-listing a h2{
-    font-size: 2.2em;
+.job-listing h2{
+    margin: 0;
+    font-size: 1.7em;
     font-weight: 600;
     font-family: 'Montserrat';
     color: #09164E;
     
 }
 
-.job-listing .job-description{
+.job-listing .jobposting-container{
+    padding: 15px 20px;
+    background-color: rgb(255, 255, 255);   
+    border-radius: 15px;
+    box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
+}
+
+.job-listing .jobposting-container .job-description{
+    font-size: 1em;
     font-family: 'Onest';
-    color: #66709D;
-    margin: 10px 0 15px 0;
+    font-weight: 500;
+    color: rgba(5, 22, 109, 0.705);
+    margin: 5px 5px;
+}
+
+.job-listing .jobposting-container .date{
+    display: flex;
+    justify-content: end;
+    font-family: 'Montserrat';
+    margin-top: 15px;
 }
 
 
@@ -199,7 +221,6 @@ section.company-section {
     color: #09164ea9;
     border-radius: 8px;
     box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
-    float: right;
 }
 
 .sidebar div{
@@ -262,14 +283,13 @@ section.company-section {
     margin-bottom: 10px; /* Adds space between buttons and job listings */
 }
 
-.upload-job-btn,
-.announcement-btn {
-    background-color: #ffffff;
+.upload-job-btn {
+    background-color: rgb(207, 210, 223);
     color: #09164E;
     font-family: 'Montserrat';
     font-weight: 600;
-    padding: 10px 0;
-    width: 50%;
+    padding: 10px 20px;
+    width: 100%;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -278,9 +298,8 @@ section.company-section {
     box-shadow: 0 2px 15px -10px rgba(5, 23, 109, 0.35);
 }
 
-.upload-job-btn:hover,
-.announcement-btn:hover {
-    background-color: #0791f3; /* Change color on hover */
+.upload-job-btn:hover{
+    background-color: rgb(170, 173, 189);
 }
 
 /* Styling for the Upload and Make Announcement Button */
@@ -291,23 +310,6 @@ section.company-section {
     margin-bottom: 10px; /* Adds space between buttons and job listings */
 }
 
-.upload-job-btn,
-.announcement-btn {
-    background-color: #d4d5d6;
-    color: rgb(0, 0, 0);
-    padding: 20px 150px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.upload-job-btn:hover,
-.announcement-btn:hover {
-    background-color: #0791f3; /* Change color on hover */
-}
 .popup {
     display: none; /* Hide by default */
     position: fixed;
@@ -437,4 +439,10 @@ section.company-section {
 
 .categories-dropdown::-webkit-scrollbar-thumb:hover {
     background-color: #aaa;
+}
+
+.division{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
