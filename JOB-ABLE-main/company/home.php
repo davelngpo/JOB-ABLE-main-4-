@@ -1,6 +1,10 @@
 <?php
     include '../dbconnect.php';
     include 'logout-com.php';
+
+    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id DESC limit 3";
+
+    $category = "SELECT category_name FROM `job_categories` LIMIT 4";
 ?>
 
 <!DOCTYPE html>
@@ -19,82 +23,44 @@
 <body>
     <?php include 'header-com.php' ?>
 
-<!-- Header -->
-<!-- <header>
-    <div class="web-name">
-        <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
-    </div>
-
-    <div class="nav">
-        <div class="options">
-            <a href="../JOBABLE-homepage/home.html">HOME</a>
-            <a href="http://">MORE</a>
-        </div>
-
-        <div class="icons">
-            <img class="notif" src="/JOB-ABLE-main/assets/notification icon.png" alt="Notification">
-            <a href="../JOBABLE-profile-view/Profile-Company-Views.html"><img class="profile" src="/JOB-ABLE-main/assets/account icon.png" alt="Account"></a>
-        </div>
-    </div>
-</header> -->
 
 <br><br><br><br><br><br>
-<!-- <div class="header">
-    <div class="logo">
-        <div style="width: 20px; height: 20px; background-color: #f1c40f; border-radius: 50%; margin-right: 8px;"></div>
-        JOB-<span>ABLE</span>
-    </div>
-    <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">More</a>
-        <a href="#">&#128276;</a>
-        <a href="../JOBABLE-profile-view/Profile-Company-Views.html">&#128100;</a>
-    </div>
-</div> -->
-
-<!-- Action Buttons Section -->
 <div class="action-buttons-container">
     <div class="action-buttons">
         <button>Upload New Job Posting</button>
-        <button>Make Announcement</button>
     </div>
 </div>
 
+<?php $r = $connect->query($jobposting); 
 
-<div class="job-card">
-    <div class="job-header">
-        <div class="left-section">
-            <div class="company-icon"></div>
-            <div>
-                <div class="job-title">Company Name</div>
-                <div class="job-time">1 hr</div>
-            </div>
-        </div>
-        <button class="edit-button">Edit</button>
-    </div>
-    <div class="job-title">JOB POSTING 1#</div>
-    <div class="job-description">Job Description... <a href="../JOBABLE posting view pages/job-posting-view-com.html">see more.</a></div>
-    <div class="job-categories">
-        <span class="job-category">Category 1</span>
-        <span class="job-category">Category 2</span>
-    </div>
-</div>
+    while($jobpost = $r -> fetch_assoc()){?>
 
 <div class="job-card">
     <div class="job-header">
         <div class="left-section">
             <div class="company-icon"></div>
             <div>
-                <div class="job-title">Company Name</div>
-                <div class="job-time">2 hr</div>
+                <div class="job-company"><?php echo $jobpost['company_name'] ?></div>
+                <div class="job-time"><?php echo $jobpost['date_posted'] ?></div>
             </div>
         </div>
-        <button class="edit-button">Edit</button>
     </div>
-    <div class="job-title">JOB POSTING 2#</div>
-    <div class="job-description">Job Description... <a href="#">see more.</a></div>
+    <div class="job-title"><?php echo $jobpost['posting_title'] ?></div>
+    <div class="job-description">
+        <?php
+            $post_desc = $jobpost['posting_description'];
+            $max_len = 160;
+            echo strlen($post_desc) > $max_len? substr($post_desc, 0, $max_len) . "..." : $post_desc;
+        ?>
+        <a href="../JOBABLE posting view pages/job-posting-view-com.html">see more.</a>
+    </div>
     <div class="job-categories">
-        <span class="job-category">Category 1</span>
-        <span class="job-category">Category 2</span>
+        <?php foreach (explode(', ', $jobpost['categories']) as $category): ?>
+            <span class="job-category"><?php echo htmlspecialchars($category); ?></span>
+        <?php endforeach; ?>
     </div>
 </div>
+
+<?php } ?>
+
+</body>

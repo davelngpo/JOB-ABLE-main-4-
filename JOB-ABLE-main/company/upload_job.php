@@ -1,5 +1,5 @@
 <?php
-include '../../dbconnect.php'; // Database connection
+include '../dbconnect.php'; // Database connection
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $job_title = $_POST['job_title'];

@@ -2,6 +2,7 @@
     include '../dbconnect.php';
     include 'logout-com.php';
 
+    $jobposting = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp join companies c ON jp.company_id = c.company_id join job_categories jc on jc.jobposting_id = jp.jobposting_id GROUP BY jp.jobposting_id limit 3";
 
 ?>
 
@@ -31,23 +32,6 @@
     $jobposting = "SELECT jp.*, c.*, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories FROM jobposting jp JOIN companies c ON c.company_id = jp.company_id JOIN job_categories jc ON jp.jobposting_id = jc.jobposting_id WHERE jp.company_id = 7 GROUP BY jp.jobposting_id";
 
     ?>
-    <!-- <header>
-        <div class="web-name">
-            <img src="/JOB-ABLE-main/assets/logo placeholder.png" alt="JOB-ABLE"> JOB-<span class="able">ABLE</span>
-        </div>
-    
-        <div class="nav">
-            <div class="options">
-                <a href="../JOBABLE-homepage/home.html">HOME</a>
-                <a href="http://">MORE</a>
-            </div>  
-    
-            <div class="icons">
-                <img class="notif" src="/JOB-ABLE-main/assets/notification icon.png" alt="Notification">
-                <a href="../JOBABLE-profile-view/Profile-Company-Views.html"><img class="profile" src="/JOB-ABLE-main/assets/account icon.png" alt="Account"></a>
-            </div>
-        </div>
-    </header> -->
     
     <br><br><br><br><br><br>
     <!-- <header>
@@ -86,8 +70,7 @@
                             <?php } ?>
                         </div>
                         
-                        <div class="button-container"> <!-- Button container for right alignment -->
-                            <button class="edit-profile-bttn">Edit Profile</button>
+                        <div class="button-container">
                             <a href="logout.php"><button class="logout-bttn" onclick="alert('Are you sure?')">Logout</button></a>
                         </div>
                         <br>
@@ -100,7 +83,7 @@
         <div class="profile-container">
             <div class="action-buttons">
                 <button class="upload-job-btn" onclick="togglePopup('job-posting-popup')">Upload New Job Posting</button>
-                <button class="announcement-btn" onclick="togglePopup('job-announcement-popup')">Make an Announcement</button>
+                
             </div>
         </div>
     </section>
@@ -133,9 +116,6 @@
                     }
                     ?> </div>
                 </div>
-            </div>
-        </div>
-
             </div>
         </div>
                 

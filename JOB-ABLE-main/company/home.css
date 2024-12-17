@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: aliceblue;
+    background-color: #E9EBF4;
 }
 
 .action-buttons-container {
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     border-radius: 8px; 
-    width: 90%;
+    width: 80%;
     margin: 20px auto; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
@@ -79,8 +79,14 @@ body {
     height: 40px;
     border-radius: 50%;
 }
+.job-company{
+    font-size: 1.em;
+    font-weight: 600;
+    font-family: 'Montserrat';
+}
 .job-title {
-    font-size: 20px;
+    font-family: 'Montserrat';
+    font-size: 2em;
     font-weight: bold;
     color: #333;
 }
@@ -101,9 +107,16 @@ body {
     text-decoration: underline;
 }
 .job-description {
-    color: #666;
+    color: rgba(102, 112, 157, 1);
+    font-family: 'Onest';
     margin: 10px 0;
 }
+
+.job-description a{
+    color: #f1c40f;
+    text-decoration: none;
+}
+
 .job-categories {
     display: flex;
     gap: 10px;
@@ -113,6 +126,6 @@ body {
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 1em;
+    font-weight: 400;
 }
