@@ -1,3 +1,21 @@
+<?php 
+include '../dbconnect.php';
+
+$category = isset($_GET['category']) ? $_GET['category'] : '';
+$jobsQuery = "SELECT *, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories 
+              FROM jobposting jp 
+              JOIN companies c ON jp.company_id = c.company_id 
+              JOIN job_categories jc ON jc.jobposting_id = jp.jobposting_id 
+              WHERE jc.category_name LIKE ? 
+              GROUP BY jp.jobposting_id 
+              ORDER BY jp.date_posted DESC";
+
+$stmt = $connect->prepare($jobsQuery);
+$param = "%$category%";
+$stmt->bind_param('s', $param);
+$stmt->execute();
+$result = $stmt->get_result();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,47 +51,27 @@
     </div>
     </aside>
 
-    <!-- Recommendations Section -->
-    <div class="recommendations">
-        <h2>Recommended Jobs</h2>
-        
+     <!-- Display Recommended Jobs -->
+<div class="recommendations">
+    <h2>Recommended Jobs in "<?php echo htmlspecialchars($category); ?>"</h2>
+    <?php while($job = $result->fetch_assoc()){ ?>
         <div class="job-card">
             <div class="job-header">
-                <span class="job-title">JOB POSTING 1#</span>
-                <span class="company-name">Company Name</span>
+                <span class="job-title"><?php echo $job['posting_title']; ?></span>
+                <span class="company-name"><?php echo $job['company_name']; ?></span>
             </div>
-            <div class="job-description">Job Description... <a href="#">see more.</a></div>
+            <div class="job-description">
+                <?php echo substr($job['posting_description'], 0, 170) . '...'; ?>
+                <a href="job-posting-view-app.php?id=<?php echo $job['jobposting_id']; ?>">see more</a>
+            </div>
             <div class="job-categories">
-                <span class="job-category">Category 1</span>
-                <span class="job-category">Category 2</span>
+                <?php foreach (explode(', ', $job['categories']) as $cat): ?>
+                    <span class="job-category"><?php echo htmlspecialchars($cat); ?></span>
+                <?php endforeach; ?>
             </div>
         </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <span class="job-title">JOB POSTING 2#</span>
-                <span class="company-name">Company Name</span>
-            </div>
-            <div class="job-description">Job Description... <a href="#">see more.</a></div>
-            <div class="job-categories">
-                <span class="job-category">Category 1</span>
-                <span class="job-category">Category 2</span>
-            </div>
-        </div>
-
-        <div class="job-card">
-            <div class="job-header">
-                <span class="job-title">JOB POSTING 3#</span>
-                <span class="company-name">Company Name</span>
-            </div>
-            <div class="job-description">Job Description... <a href="#">see more.</a></div>
-            <div class="job-categories">
-                <span class="job-category">Category 1</span>
-                <span class="job-category">Category 2</span>
-            </div>
-        </div>
-    </div>
-
+    <?php } ?>
+</div>
 </div>
 
 </body>

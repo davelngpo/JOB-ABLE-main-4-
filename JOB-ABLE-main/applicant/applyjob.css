@@ -1,0 +1,103 @@
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: none;
+}
+
+.popup .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #d2e0e7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    width: 100%;
+    max-width: 800px;
+    z-index: 2;
+    text-align: left;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 300ms ease-in-out;
+}
+
+.popup .header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.popup .applicant-name {
+    font-size: 18px; 
+    font-weight: bold;
+    margin: 0;
+    color: #071525;
+}
+
+.popup .message-container {
+    margin-bottom: 30px;
+    padding: 30px;
+    color: #333333;
+}
+
+.popup .message-container textarea {
+    width: 100%;
+    height: 50%;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 15px;
+    font-size: 14px;
+    resize: none;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end; /* Adjusted to position buttons side by side */
+    gap: 10px; /* Added space between buttons */
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.cancel-btn {
+    background-color: #75bafe;
+    color: #ffffff;
+}
+
+.cancel-btn:hover {
+    background-color: #357ee5; 
+    transform: scale(1.05);
+}
+
+.apply-btn {
+    background-color: #2289d8;
+    color: #ffffff;
+}
+
+.apply-btn:hover {
+    background-color: #1267f1; 
+    transform: scale(1.05);
+}
+
+.popup.active .overlay {
+    display: block;
+}
+
+.popup.active .content {
+    transform: translate(-50%, -50%) scale(1);
+}
