@@ -32,14 +32,14 @@
 <br><br><br><br><br>
 
 <!-- Search Section -->
-<div class="search-section">
+<div class="search-section" id="search-selection">
     <div class="search-bar">
         <span class="search-icon">&#128269;</span>
         <input type="text" placeholder="Enter keyword/s">
     </div>
     <p>or search through Categories...</p>
     
-    <<div class="categories">
+    <div class="categories">
     <?php $r = $connect->query($category); 
     while($categories = $r->fetch_assoc()){ ?>
         <a href="browse_page_applicant.php?category=<?php echo urlencode($categories['category_name']); ?>">
@@ -49,8 +49,8 @@
             </div>
         </a>
     <?php } ?>
+    </div>
 </div>
-
 
 
 <!-- Recommendations Section -->
@@ -80,6 +80,7 @@
         </div>
     </div>
     <?php } ?>
+    <br>
 </div>
 
 <!-- Pop-up for Job Application -->
