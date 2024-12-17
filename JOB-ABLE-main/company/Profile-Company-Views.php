@@ -90,34 +90,61 @@
                 <!-- Company Jobs Posting -->
                  
                 <!-- Company Jobs Posting -->
-<!-- Job Postings Section -->
-        <div class="job-listing">
-        <br>
-            <h2>JOB POSTINGS</h2>
-            <br>
-            
-            <div class="job-postings">
-                <div>
-                    <div>
-                    <?php
-                    #include '../../dbconnect.php';
-                    $sql = "SELECT jobposting_id, posting_title, posting_description FROM jobposting WHERE posting_title != 'Sample Job Title';";
-                    $result = $connect->query($sql);
+ <!-- Job Listings Section -->
+ <div class="company-job-listings">
+    <h2>Company Job Listings</h2>
 
-                    if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<div class='job-item'><br>";
-                        echo "<h3>{$row['posting_title']}</h3><br>";
-                        echo "<p>{$row['posting_description']}</p><br>";
-                        echo "</div>";
-                    }
-                    } else {
-                    echo "<p>No job postings available.</p>";
-                    }
-                    ?> </div>
+    <?php
+    include '../dbconnect.php';
+
+    $company_id = $_SESSION['company_id'];
+    $sql_company = "SELECT company_name FROM companies WHERE company_id = ?";
+    $stmt_company = $connect->prepare($sql_company);
+    $stmt_company->bind_param("i", $company_id);
+    $stmt_company->execute();
+    $result_company = $stmt_company->get_result();
+
+    $company_name = "Unknown Company";
+    if ($result_company->num_rows > 0) {
+        $company_row = $result_company->fetch_assoc();
+        $company_name = $company_row['company_name'];
+    }
+
+    $sql_jobs = "SELECT jp.jobposting_id, jp.posting_title, jp.posting_description, GROUP_CONCAT(jc.category_name SEPARATOR ', ') AS categories
+                 FROM jobposting jp
+                 LEFT JOIN job_categories jc ON jp.jobposting_id = jc.jobposting_id
+                 WHERE jp.company_id = ? AND jp.posting_title != 'Sample Job Title'
+                 GROUP BY jp.jobposting_id";
+    $stmt_jobs = $connect->prepare($sql_jobs);
+    $stmt_jobs->bind_param("i", $company_id);
+    $stmt_jobs->execute();
+    $result_jobs = $stmt_jobs->get_result();
+
+    if ($result_jobs->num_rows > 0) {
+        echo "<h3>Job Listings for " . $company_name . "</h3>";
+        while ($row = $result_jobs->fetch_assoc()) {
+            echo "<div class='job-listing-item'>";
+            echo "<div class='job-listing-header'>";
+            echo "<h4>" . $row['posting_title'] . "</h4>";
+            echo "</div>";
+            echo "<p>" . $row['posting_description'] . "</p>";
+            echo "<a href='job-posting-view.php?jobposting_id=" . $row['jobposting_id'] . "' class='view-btn'>View Job Posting</a>";
+            echo "<div class='job-categories'>";
+            echo "<button class='category-btn'>" . ($row['categories'] ? $row['categories'] : 'No categories') . "</button>";
+            echo "</div>";
+            echo "</div>";
+        }
+    } else {
+        echo "<p>No job postings available for " . $company_name . " at the moment.</p>";
+    }
+
+    $stmt_company->close();
+    $stmt_jobs->close();
+    ?>
+</div>
+
+
                 </div>
-            </div>
-        </div>
                 
                 <aside class="sidebar">
                     <h2>Personal Info</h2>

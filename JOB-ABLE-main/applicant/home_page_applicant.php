@@ -39,16 +39,16 @@
     </div>
     <p>or search through Categories...</p>
     
-    <div class="categories">
-        <?php $r = $connect->query($category); 
-        while($categories = $r -> fetch_assoc()){?>
-        <div class="category">
-            <div class="category-icon"></div>
-            <span class="name"><?php echo $categories['category_name'] ?></span>
-        </div>
-        <?php } ?>
-    </div>
-    
+    <<div class="categories">
+    <?php $r = $connect->query($category); 
+    while($categories = $r->fetch_assoc()){ ?>
+        <a href="browse_page_applicant.php?category=<?php echo urlencode($categories['category_name']); ?>">
+            <div class="category">
+                <div class="category-icon"></div>
+                <span class="name"><?php echo $categories['category_name']; ?></span>
+            </div>
+        </a>
+    <?php } ?>
 </div>
 
 

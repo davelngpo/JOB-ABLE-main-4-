@@ -299,7 +299,7 @@ section.company-section {
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 10px;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
